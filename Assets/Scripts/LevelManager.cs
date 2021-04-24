@@ -26,9 +26,11 @@ public class LevelManager : MonoBehaviour
     {
         enabled = true;
         Current = this;
-        
+
         if (_computer != null)
             _computer.ShowUI();
+        else
+            _room.Player.enabled = true;
     }
 
     public void Deactivate()
