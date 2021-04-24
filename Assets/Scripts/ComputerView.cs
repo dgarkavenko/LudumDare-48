@@ -24,7 +24,6 @@ public class ComputerView : MonoBehaviour
     public void TurnOn()
     {
         _isSwitchedOn = true;
-        
         RunUI();
     }
 
@@ -33,7 +32,10 @@ public class ComputerView : MonoBehaviour
         if (!_isSwitchedOn)
             return;
         
-        SwitchCamera(_uiCamera);
+        if (_uiCamera == null)
+            RunGameplay();
+        else
+            SwitchCamera(_uiCamera);
     }
     
     public void RunGameplay()
