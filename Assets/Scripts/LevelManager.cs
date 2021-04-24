@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -10,25 +7,52 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Room _room;
     [SerializeField] private ComputerView _computer;
 
+    private ELevelState _currentState = ELevelState.UI;
+
+    private void Start()
+    {
+        if (_computer != null)
+        {
+            _computer.OnUIShown += () => _currentState = ELevelState.UI;
+            _computer.OnGameplayShown += () =>
+            {
+                _currentState = ELevelState.Gameplay;
+                _room.Player.enabled = true;
+            };
+        }
+    }
+
     public void Activate()
     {
         enabled = true;
-        _computer.RunUI();
+        Current = this;
+        
+        if (_computer != null)
+            _computer.ShowUI();
+    }
+
+    public void Deactivate()
+    {
+        enabled = false;
+        _room.Player.enabled = false;
     }
     
     public void TurnOnVisually()
     {
-        _computer.TurnOn();
+        if (_computer != null)
+            _computer.TurnOn();
     }
     
-    public void Run()
+    public void ShowUI()
     {
-        _computer.RunUI();
+        if (_computer != null)
+            _computer.ShowUI();
     }
 
     public void RunGameplay()
     {
-        _computer.RunGameplay();
+        if (_computer != null)
+            _computer.ShowGameplay();
     }
 
     private void Update()
@@ -37,5 +61,24 @@ public class LevelManager : MonoBehaviour
         {
             RunGameplay();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (_currentState == ELevelState.Gameplay && !_room.StartingRoom)
+            {
+                ShowUI();
+                _room.Player.enabled = false;
+            }
+            else if (GameManager.Instance.AnyDisplays)
+            {
+                GameManager.Instance.ZoomOutDisplay();
+            }
+        }
     }
+}
+
+public enum ELevelState
+{
+    UI,
+    Gameplay
 }

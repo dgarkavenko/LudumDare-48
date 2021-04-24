@@ -19,12 +19,22 @@ public class InterfaceController : MonoBehaviour
     private Vector3 _mousePosition;
     private RectTransform _cursorTransform;
 
-    private void OnEnable()
+    private void Start()
     {
         _mousePosition = Input.mousePosition;
         _cursorTransform = _cursor.rectTransform;
         _width = _uiRoot.sizeDelta.x;
         _height = _uiRoot.sizeDelta.y;
+    }
+
+    public void Activate()
+    {
+        enabled = true;
+    }
+
+    public void Deactivate()
+    {
+        enabled = false;
     }
 
     private void Update()

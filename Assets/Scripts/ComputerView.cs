@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
 public class ComputerView : MonoBehaviour
 {
+    public event Action OnUIShown;
+    public event Action OnGameplayShown;
+    
     [SerializeField] private Camera _camera = default;
     [SerializeField] private Camera _uiCamera = default;
     [SerializeField] private int _resolutionWidth = 1024;
@@ -18,32 +22,36 @@ public class ComputerView : MonoBehaviour
         _renderTexture = new RenderTexture(_resolutionWidth, _resolutionHeight, 24);
         _renderer.material.mainTexture = _renderTexture;
         
-        RunUI();
+        ShowUI();
     }
 
     public void TurnOn()
     {
         _isSwitchedOn = true;
-        RunUI();
+        ShowUI();
     }
 
-    public void RunUI()
+    public void ShowUI()
     {
         if (!_isSwitchedOn)
             return;
-        
-        if (_uiCamera == null)
-            RunGameplay();
-        else
+
+        if (_uiCamera != null)
+        {
             SwitchCamera(_uiCamera);
+            OnUIShown?.Invoke();
+        }
+        else
+            ShowGameplay();
     }
     
-    public void RunGameplay()
+    public void ShowGameplay()
     {
         if (!_isSwitchedOn)
             return;
 
         SwitchCamera(_camera);
+        OnGameplayShown?.Invoke();
     }
 
     private void SwitchCamera(Camera activeCamera)
