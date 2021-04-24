@@ -704,6 +704,7 @@ MonoBehaviour:
   _resolutionWidth: 1024
   _resolutionHeight: 768
   _isSwitchedOn: 1
+  InterfaceController: {fileID: 0}
 --- !u!1001 &166573819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5372,6 +5373,7 @@ MonoBehaviour:
   _resolutionWidth: 1024
   _resolutionHeight: 768
   _isSwitchedOn: 1
+  InterfaceController: {fileID: 2039396200}
 --- !u!1 &1258134881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4177473819233665923, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
@@ -8363,6 +8365,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027406800}
   m_CullTransparentMesh: 1
+--- !u!114 &2039396200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7447449000263786171, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
+  m_PrefabInstance: {fileID: 1669822069488698073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454fc9ad5a4022d4b893091f1bb1256b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2075414468
 GameObject:
   m_ObjectHideFlags: 0

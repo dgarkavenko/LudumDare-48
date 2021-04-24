@@ -11,7 +11,8 @@ public class ComputerView : MonoBehaviour
     [SerializeField] private Camera _uiCamera = default;
     [SerializeField] private int _resolutionWidth = 1024;
     [SerializeField] private int _resolutionHeight = 768;
-    [SerializeField] private bool _isSwitchedOn = true; 
+    [SerializeField] private bool _isSwitchedOn = true;
+    public InterfaceController InterfaceController = default;
     
     private Renderer _renderer;
     private RenderTexture _renderTexture;
@@ -39,6 +40,8 @@ public class ComputerView : MonoBehaviour
         if (_uiCamera != null)
         {
             SwitchCamera(_uiCamera);
+            if (InterfaceController != null)
+                InterfaceController.Activate();
             OnUIShown?.Invoke();
         }
         else
@@ -51,6 +54,8 @@ public class ComputerView : MonoBehaviour
             return;
 
         SwitchCamera(_camera);
+        if (InterfaceController != null)
+            InterfaceController.Deactivate();
         OnGameplayShown?.Invoke();
     }
 

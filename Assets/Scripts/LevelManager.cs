@@ -37,6 +37,9 @@ public class LevelManager : MonoBehaviour
     {
         enabled = false;
         _room.Player.enabled = false;
+        
+        if (_computer != null && _computer.InterfaceController != null)
+            _computer.InterfaceController.enabled = false;
     }
     
     public void TurnOnVisually()
