@@ -717,6 +717,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 130024183}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &130024185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028283690403205204, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 130024183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ac74223261194c952044eea3af2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &130024186 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 857240892, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -1142,6 +1153,7 @@ GameObject:
   - component: {fileID: 250726935}
   - component: {fileID: 250726934}
   - component: {fileID: 250726932}
+  - component: {fileID: 250726933}
   m_Layer: 6
   m_Name: Floppy
   m_TagString: Untagged
@@ -1181,6 +1193,27 @@ MonoBehaviour:
   CarryRotation: {x: -159.4, y: 197.4, z: -145.5}
   CanDrop: 0
   Id: 0
+--- !u!114 &250726933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250726930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287a757b512b004e928059da2a30510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mask: {fileID: 722005166}
+  mode: 0
+  m_includeChildren: 1
+  customMesh: {fileID: 0}
+  overrideGlobalOptions: 1
+  opacity: 1
+  scale: {x: 1, y: 1, z: 1}
+  extrude: 0
+  texture: {fileID: 0}
 --- !u!65 &250726934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1775,6 +1808,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 498096071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &498096074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028283690403205204, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 498096071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ac74223261194c952044eea3af2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527292357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2008,7 @@ GameObject:
   - component: {fileID: 567843144}
   - component: {fileID: 567843143}
   - component: {fileID: 567843141}
+  - component: {fileID: 567843142}
   m_Layer: 6
   m_Name: Floppy
   m_TagString: Untagged
@@ -1987,6 +2032,27 @@ MonoBehaviour:
   CarryRotation: {x: -159.4, y: 197.4, z: -145.5}
   CanDrop: 0
   Id: 1
+--- !u!114 &567843142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567843140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287a757b512b004e928059da2a30510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mask: {fileID: 2075983474}
+  mode: 0
+  m_includeChildren: 1
+  customMesh: {fileID: 0}
+  overrideGlobalOptions: 1
+  opacity: 1
+  scale: {x: 1, y: 1, z: 1}
+  extrude: 0
+  texture: {fileID: 0}
 --- !u!65 &567843143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2539,6 +2605,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 722005164}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &722005166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028283690403205204, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 722005164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ac74223261194c952044eea3af2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &722005167 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 857240892, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -2623,6 +2700,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 726006589}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &726006592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028283690403205204, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 726006589}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ac74223261194c952044eea3af2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &733465693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3802,6 +3890,7 @@ GameObject:
   - component: {fileID: 940409097}
   - component: {fileID: 940409096}
   - component: {fileID: 940409094}
+  - component: {fileID: 940409095}
   m_Layer: 6
   m_Name: Floppy
   m_TagString: Untagged
@@ -3825,6 +3914,27 @@ MonoBehaviour:
   CarryRotation: {x: -159.4, y: 197.4, z: -145.5}
   CanDrop: 0
   Id: 0
+--- !u!114 &940409095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940409093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287a757b512b004e928059da2a30510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mask: {fileID: 498096074}
+  mode: 0
+  m_includeChildren: 1
+  customMesh: {fileID: 0}
+  overrideGlobalOptions: 1
+  opacity: 1
+  scale: {x: 1, y: 1, z: 1}
+  extrude: 0
+  texture: {fileID: 0}
 --- !u!65 &940409096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4074,6 +4184,7 @@ GameObject:
   - component: {fileID: 1063211792}
   - component: {fileID: 1063211791}
   - component: {fileID: 1063211789}
+  - component: {fileID: 1063211790}
   m_Layer: 6
   m_Name: Floppy
   m_TagString: Untagged
@@ -4097,6 +4208,27 @@ MonoBehaviour:
   CarryRotation: {x: -159.4, y: 197.4, z: -145.5}
   CanDrop: 0
   Id: 0
+--- !u!114 &1063211790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063211788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287a757b512b004e928059da2a30510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mask: {fileID: 726006592}
+  mode: 0
+  m_includeChildren: 1
+  customMesh: {fileID: 0}
+  overrideGlobalOptions: 1
+  opacity: 1
+  scale: {x: 1, y: 1, z: 1}
+  extrude: 0
+  texture: {fileID: 0}
 --- !u!65 &1063211791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4360,6 +4492,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+--- !u!114 &1176132588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028283690403205204, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1176132587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ac74223261194c952044eea3af2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1176132589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -5178,6 +5321,7 @@ GameObject:
   - component: {fileID: 1430314559}
   - component: {fileID: 1430314558}
   - component: {fileID: 1430314556}
+  - component: {fileID: 1430314557}
   m_Layer: 6
   m_Name: Floppy
   m_TagString: Untagged
@@ -5217,6 +5361,27 @@ MonoBehaviour:
   CarryRotation: {x: -159.4, y: 197.4, z: -145.5}
   CanDrop: 0
   Id: 0
+--- !u!114 &1430314557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430314554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287a757b512b004e928059da2a30510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mask: {fileID: 1176132588}
+  mode: 0
+  m_includeChildren: 1
+  customMesh: {fileID: 0}
+  overrideGlobalOptions: 1
+  opacity: 1
+  scale: {x: 1, y: 1, z: 1}
+  extrude: 0
+  texture: {fileID: 0}
 --- !u!65 &1430314558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5491,6 +5656,7 @@ GameObject:
   - component: {fileID: 1490454475}
   - component: {fileID: 1490454474}
   - component: {fileID: 1490454472}
+  - component: {fileID: 1490454473}
   m_Layer: 6
   m_Name: Floppy
   m_TagString: Untagged
@@ -5530,6 +5696,27 @@ MonoBehaviour:
   CarryRotation: {x: -159.4, y: 197.4, z: -145.5}
   CanDrop: 0
   Id: 0
+--- !u!114 &1490454473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490454470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287a757b512b004e928059da2a30510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mask: {fileID: 130024185}
+  mode: 0
+  m_includeChildren: 1
+  customMesh: {fileID: 0}
+  overrideGlobalOptions: 1
+  opacity: 1
+  scale: {x: 1, y: 1, z: 1}
+  extrude: 0
+  texture: {fileID: 0}
 --- !u!65 &1490454474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7949,6 +8136,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 2075983471}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2075983474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028283690403205204, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 2075983471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ac74223261194c952044eea3af2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2077800852
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,6 +8304,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 2091137125}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2091137127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2028283690403205204, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 2091137125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ac74223261194c952044eea3af2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2095028814
 GameObject:
   m_ObjectHideFlags: 0
@@ -79356,6 +79565,7 @@ GameObject:
   - component: {fileID: 8255422287671726052}
   - component: {fileID: 8255422287671726053}
   - component: {fileID: 8255422287671726075}
+  - component: {fileID: 8255422287671726073}
   m_Layer: 6
   m_Name: Floppy
   m_TagString: Untagged
@@ -79363,6 +79573,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8255422287671726073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255422287671726072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d287a757b512b004e928059da2a30510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mask: {fileID: 2091137127}
+  mode: 0
+  m_includeChildren: 1
+  customMesh: {fileID: 0}
+  overrideGlobalOptions: 1
+  opacity: 1
+  scale: {x: 1, y: 1, z: 1}
+  extrude: 0
+  texture: {fileID: 0}
 --- !u!114 &8255422287671726075
 MonoBehaviour:
   m_ObjectHideFlags: 0
