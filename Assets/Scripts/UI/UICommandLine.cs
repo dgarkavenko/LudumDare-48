@@ -41,7 +41,6 @@ public class UICommandLine : MonoBehaviour
             var input = Input.inputString;
             if (input.Length > 0)
             {
-                Debug.Log(input);
                 if (_regex.IsMatch(input))
                 {
                     _builder.Append(input);
