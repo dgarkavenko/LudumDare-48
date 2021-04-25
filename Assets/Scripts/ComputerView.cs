@@ -44,12 +44,15 @@ public class ComputerView : MonoBehaviour, IRoomie
             OnUIShown?.Invoke();
         }
         else
-            ShowGameplay();
+            HandleEnter();
     }
 
-    public void ShowGameplay()
+    public void HandleEnter()
     {
         if (!_isSwitchedOn)
+            return;
+        
+        if (!InterfaceController.HandleEnter())
             return;
 
         SwitchCamera(Camera);
