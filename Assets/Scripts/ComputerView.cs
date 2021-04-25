@@ -25,9 +25,15 @@ public class ComputerView : MonoBehaviour, IRoomie
         ShowUI(false);
     }
 
-    public void TurnOn()
+    public void SetTurnedOnStatus(bool turnedOn)
     {
-        _isSwitchedOn = true;
+        _isSwitchedOn = turnedOn;
+        ShowUI(false);
+    }
+
+    public void TurnOff()
+    {
+        _isSwitchedOn = false;
         ShowUI(false);
     }
 
@@ -40,7 +46,7 @@ public class ComputerView : MonoBehaviour, IRoomie
         {
             SwitchCamera(InterfaceController.UICamera);
             if (activateInput)
-                InterfaceController.enabled = true;
+                InterfaceController.Activate();
             OnUIShown?.Invoke();
         }
         else
