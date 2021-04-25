@@ -16,6 +16,7 @@ public class UICommandLine : MonoBehaviour
     
     private bool _underlineOn;
     private float _stateTime;
+    private Regex _regex = new Regex(@"[\w\d ]");
     
     private void Start()
     {
@@ -30,14 +31,13 @@ public class UICommandLine : MonoBehaviour
 
     private void Update()
     {
-        var re = new Regex("[^A-Za-z0-9 ]");
         if (Input.anyKey)
         {
             var input = Input.inputString;
             if (input.Length > 0)
             {
                 Debug.Log(input);
-                if (re.IsMatch(input))
+                if (_regex.IsMatch(input))
                 {
                     _builder.Append(input);
                     ApplyText();
