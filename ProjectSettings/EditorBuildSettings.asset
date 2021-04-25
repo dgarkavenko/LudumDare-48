@@ -30,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Room_7_(Final_scene).unity
     guid: a7c74e77fe53d324b9520213693bf923
   - enabled: 1
-    path: Assets/_Kelhem_Bedroom/Scenes/Demo.unity
+    path: Assets/Scenes/Gameplay.unity
     guid: 3e315c65de0c0cd46a615f075c67a9a3
   m_configObjects: {}
