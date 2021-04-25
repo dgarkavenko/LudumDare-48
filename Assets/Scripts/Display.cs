@@ -16,8 +16,6 @@ public class Display : InteractableObject
 
     public LevelManager LevelManager;
     public Camera PlayerCamera;
-    public Room ParentRoom;
-    public Room NextRoom;
 
     private (Vector3, Quaternion) original;
     private RaycastHit[] raycastHits = new RaycastHit[32];
@@ -82,7 +80,7 @@ public class Display : InteractableObject
     {
         CurrentState = State.ControllingNextRoom;
         GameManager.Instance.Displays.Add(this);
-        GameManager.Instance.ActiveRoom = NextRoom;
+        GameManager.Instance.Descend();
     }
 
     public IEnumerator MakeDisappear()
@@ -100,7 +98,7 @@ public class Display : InteractableObject
         CurrentState = State.ZoomingOut;
         Cursor.lockState = CursorLockMode.Locked;
 
-        GameManager.Instance.ActiveRoom = ParentRoom;
+        GameManager.Instance.Ascend();
 
         yield return Zoom(
             ZoomOutDuration,

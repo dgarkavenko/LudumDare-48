@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public Player ActivePlayer => ActiveRoom.Player;
 
-
     [SerializeField] private Room _activeRoom;
 
     public Room ActiveRoom
@@ -18,11 +17,8 @@ public class GameManager : MonoBehaviour
         {
             if (_activeRoom != value)
             {
-                _activeRoom.Player.enabled = false;
-                _activeRoom.LevelManager.Deactivate();
-
-                value.Player.enabled = true;
-                value.LevelManager.Activate();
+                _activeRoom?.Focus(false);
+                value.Focus(true);
 
                 _activeRoom = value;
             }
@@ -38,7 +34,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        ActivePlayer.enabled = true;
+        ActiveRoom.Init(null);
+        ActiveRoom.Focus(true);
     }
 
     private void Update()
@@ -77,5 +74,16 @@ public class GameManager : MonoBehaviour
                 Displays.RemoveAt(Displays.Count - 1);
             }
         }
+    }
+
+    public void Descend()
+    {
+        ActiveRoom = ActiveRoom.NextRoom;
+    }
+
+    public void Ascend()
+    {
+        if (ActiveRoom.PreviousRoom != null)
+            ActiveRoom = ActiveRoom.PreviousRoom;
     }
 }
