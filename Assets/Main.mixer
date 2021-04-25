@@ -66,6 +66,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1781739379837051000
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rain
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c4bf14f14b8f2964490e11adac92aa38
+  m_Children: []
+  m_Volume: bbd89aae575daeb4391101ec76937d59
+  m_Pitch: 9305fcf443be05f4483e3c01721377d9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 5761797833733802636}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -88,8 +107,12 @@ AudioMixerController:
     name: Drums
   - guid: 3a920d1c033d7f04aaa1ef86852c6554
     name: Piano
+  - guid: bbd89aae575daeb4391101ec76937d59
+    name: Rain
   - guid: 53357db98b23e9d438cbb3094cb23818
     name: Sax
+  - guid: b6e7a1cae896c864f985fbca81a577dd
+    name: Thunder
   m_AudioMixerGroupViews:
   - guids:
     - e4cd8a94affce834f957b022a3cf1e18
@@ -97,6 +120,8 @@ AudioMixerController:
     - 448dd05b6bf21f7449341c73a8b906f3
     - c37a46234a4b81b4eb0502dbc3f4577d
     - d7595436f9d95814587fd0cc9e6c92d7
+    - c4bf14f14b8f2964490e11adac92aa38
+    - 9e8d2a1da8a5cb145bbb370a23863719
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -114,6 +139,8 @@ AudioMixerGroupController:
   - {fileID: -8703881411807649957}
   - {fileID: -6089784915857644739}
   - {fileID: 8446573431377521517}
+  - {fileID: -1781739379837051000}
+  - {fileID: 8525227519194390638}
   m_Volume: b403957127c6931409a41ce79d7a207e
   m_Pitch: 53efb1f246a1066409e7de4f03103bab
   m_Send: 00000000000000000000000000000000
@@ -195,6 +222,34 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &5761797833733802636
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 71ba36a3c24715e448ef9e14708a3c2d
+  m_EffectName: Attenuation
+  m_MixLevel: 51a715b1868da9847b37c8c39a44b3dd
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &6257679090320257998
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 72b0d6c709a03a341aeb625616020028
+  m_EffectName: Attenuation
+  m_MixLevel: 62e532a1e352a6642b4f1aa660ab8000
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &8446573431377521517
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -210,6 +265,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -4926801448305754984}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &8525227519194390638
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Thunder
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9e8d2a1da8a5cb145bbb370a23863719
+  m_Children: []
+  m_Volume: b6e7a1cae896c864f985fbca81a577dd
+  m_Pitch: b1bbdcf4b0bfa3b46960958aceee7205
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 6257679090320257998}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
