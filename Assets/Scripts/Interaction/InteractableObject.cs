@@ -15,7 +15,7 @@ public abstract class InteractableObject : MonoBehaviour
     public Transferrable RequiresItem;
 
 
-    private void OnValidate()
+    public virtual void OnValidate()
     {
         if (_outline != null) return;
         _outline = GetComponent<Outline>();

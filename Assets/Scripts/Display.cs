@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class Display : InteractableObject, IRoomie
@@ -25,6 +26,7 @@ public class Display : InteractableObject, IRoomie
     {
         layerMask = LayerMask.GetMask(LayerMask.LayerToName(this.gameObject.layer));
     }
+
 
     private void Update()
     {
@@ -138,7 +140,7 @@ public class Display : InteractableObject, IRoomie
 
     public override bool CanInteract(Player player)
     {
-        return base.CanInteract(player) && CurrentState == State.Idle;
+        return base.CanInteract(player) && CurrentState == State.Idle && ParentRoom.PowerIsOn;
     }
 
     public override void Interact(Player player)
