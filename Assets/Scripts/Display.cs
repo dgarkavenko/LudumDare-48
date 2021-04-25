@@ -15,6 +15,26 @@ public class Display : InteractableObject, IRoomie
 
     public State CurrentState = State.Idle;
 
+    [SerializeField] private Transferrable.ETransferrableId _equipment;
+    [SerializeField] private Transferrable.ETransferrableId _fullyEquipedFlag = (Transferrable.ETransferrableId.Floppy | Transferrable.ETransferrableId.Keyboard);
+
+    [System.Serializable]
+    public class EquipmentPosition
+    {
+        public Transferrable.ETransferrableId Id;
+        public Vector3 Position;
+    }
+
+    public Transferrable.ETransferrableId Equipment
+    {
+        get => _equipment;
+        set => _equipment = value;
+    }
+
+    public bool FullyEquiped => Equipment == _fullyEquipedFlag;
+    public bool HasFloppy => (Equipment & Transferrable.ETransferrableId.Floppy) != 0;
+
+
     public LevelManager LevelManager => ParentRoom.LevelManager;
     public Camera PlayerCamera => ParentRoom.Camera;
 
@@ -118,7 +138,8 @@ public class Display : InteractableObject, IRoomie
         var (targetPosition, targetRotation) = to;
         var t = 0f;
 
-        while (t < duration) {
+        while (t < duration)
+        {
             var value = curve.Evaluate(t / duration);
             PlayerCamera.transform.position = Vector3.Lerp(sourcePosition, targetPosition, value);
             PlayerCamera.transform.rotation = Quaternion.Lerp(sourceRotation, targetRotation, value);
@@ -140,23 +161,27 @@ public class Display : InteractableObject, IRoomie
 
     public override bool CanInteract(Player player)
     {
-        if (RequiresItem != null || player.Burden == RequiresItem)
+        if (player.Burden != null && (_fullyEquipedFlag & player.Burden.Id) != 0)
             return true;
 
-        return CurrentState == State.Idle && ParentRoom.PowerIsOn;
+        return CurrentState == State.Idle && ParentRoom.PowerIsOn && HasFloppy;
     }
+
 
     public override void Interact(Player player)
     {
-        if (RequiresItem)
-            base.Interact(player);
+        if (!FullyEquiped)
+        {
+            AcceptRequiredItem(player.Burden);
+            player.Burden = null;
+        }
         else
             EnterUI();
     }
 
     public override void AcceptRequiredItem(Transferrable requiredItem)
     {
-        RequiresItem = null;
+        Equipment |= requiredItem.Id;
         requiredItem.transform.position = transform.position;
     }
 
