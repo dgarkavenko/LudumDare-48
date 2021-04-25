@@ -29,15 +29,17 @@ public class LevelManager : MonoBehaviour, IRoomie
         Current = this;
 
         if (Computer != null)
-            Computer.ShowUI();
-        else
-            Room.Player.enabled = true;
+        {
+            if (_currentState == ELevelState.UI)
+                Computer.ShowUI();
+            else
+                Computer.ShowGameplay();
+        }
     }
 
     public void Deactivate()
     {
         enabled = false;
-        Room.Player.enabled = false;
 
         if (Computer != null && Computer.InterfaceController != null)
             Computer.InterfaceController.enabled = false;
