@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Room : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Room : MonoBehaviour
     public Camera Camera => Player.Camera;
     public List<Component> TurnOn;
     public Room NextRoom;
+    public AudioMixerSnapshot MixerSnapshot;
 
 
     public float TimeSpentInRoom;
