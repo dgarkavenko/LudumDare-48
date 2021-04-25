@@ -181,6 +181,9 @@ public class Display : InteractableObject, IRoomie
 
     public override void AcceptRequiredItem(Transferrable requiredItem)
     {
+        if (requiredItem == null)
+            return;
+        
         Equipment |= requiredItem.Id;
         requiredItem.transform.position = transform.position;
     }
