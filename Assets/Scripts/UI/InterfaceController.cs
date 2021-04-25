@@ -15,25 +15,32 @@ public class InterfaceController : MonoBehaviour
 
     private float _width;
     private float _height;
-
-    private Vector3 _mousePosition;
+    
     private RectTransform _cursorTransform;
 
-    private void OnEnable()
+    private void Start()
     {
-        _mousePosition = Input.mousePosition;
         _cursorTransform = _cursor.rectTransform;
         _width = _uiRoot.sizeDelta.x;
         _height = _uiRoot.sizeDelta.y;
     }
 
+    public void Activate()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        enabled = true;
+    }
+
+    public void Deactivate()
+    {
+        enabled = false;
+    }
+
     private void Update()
     {
-        var oldPosition = _mousePosition;
-        _mousePosition = Input.mousePosition;
-        var mouseDelta = 0.1f * (_mousePosition - oldPosition);
+        var mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         var position = _cursorTransform.anchoredPosition;
-        position += new Vector2(mouseDelta.x, mouseDelta.y);
+        position += mouseDelta;
         position.x = Mathf.Clamp(position.x, 0, _width);
         position.y = Mathf.Clamp(position.y, 0, _height);
         _cursorTransform.anchoredPosition = position;

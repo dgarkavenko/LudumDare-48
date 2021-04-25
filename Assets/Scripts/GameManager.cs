@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public List<Display> Displays;
 
+    public bool AnyDisplays => Displays.Count > 0;
+
     private int firstVisibleDisplay;
 
     private void Awake()
@@ -37,20 +39,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Displays.Count > 0) {
-            var lastDisplay = Displays[Displays.Count - 1];
-
-            if (lastDisplay.CurrentState == Display.State.UI || lastDisplay.CurrentState == Display.State.ControllingNextRoom) {
-                StartCoroutine(ZoomOutAndRemove());
-
-                IEnumerator ZoomOutAndRemove()
-                {
-                    yield return lastDisplay.ZoomOut();
-                    Displays.RemoveAt(Displays.Count - 1);
-                }
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.F4) && Displays.Count > 0) {
             var firstDisplay = Displays[firstVisibleDisplay];
 
@@ -69,6 +57,21 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             ActivePlayer.DropBurden();
+        }
+    }
+
+    public void ZoomOutDisplay()
+    {
+        var lastDisplay = Displays[Displays.Count - 1];
+
+        if (lastDisplay.CurrentState == Display.State.UI || lastDisplay.CurrentState == Display.State.ControllingNextRoom) {
+            StartCoroutine(ZoomOutAndRemove());
+
+            IEnumerator ZoomOutAndRemove()
+            {
+                yield return lastDisplay.ZoomOut();
+                Displays.RemoveAt(Displays.Count - 1);
+            }
         }
     }
 }
