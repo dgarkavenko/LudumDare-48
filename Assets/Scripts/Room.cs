@@ -106,10 +106,12 @@ public class Room : MonoBehaviour
         public float TimeSinceRoomActive;
         public Turnable Turnable;
         public Turnable.ETurnableState TargetState;
+        public AudioSource Source;
 
         public void Invoke()
         {
             Turnable.State = TargetState;
+            Source.Play();
         }
     }
 }
