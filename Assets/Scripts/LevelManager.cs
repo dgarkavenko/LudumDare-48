@@ -1,23 +1,24 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ComputerView))]
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Current { get; private set; }
 
-    [SerializeField] private Room _room;
-    [SerializeField] private ComputerView _computer;
+    private static Room Room => GameManager.Instance.ActiveRoom;
+    private ComputerView Computer => GameManager.Instance.PreviousRoom ? GameManager.Instance.PreviousRoom.ComputerView : null;
 
     private ELevelState _currentState = ELevelState.UI;
 
     private void Start()
     {
-        if (_computer != null)
+        if (Computer != null)
         {
-            _computer.OnUIShown += () => _currentState = ELevelState.UI;
-            _computer.OnGameplayShown += () =>
+            Computer.OnUIShown += () => _currentState = ELevelState.UI;
+            Computer.OnGameplayShown += () =>
             {
                 _currentState = ELevelState.Gameplay;
-                _room.Player.enabled = true;
+                Room.Player.enabled = true;
             };
         }
     }
@@ -27,37 +28,37 @@ public class LevelManager : MonoBehaviour
         enabled = true;
         Current = this;
 
-        if (_computer != null)
-            _computer.ShowUI();
+        if (Computer != null)
+            Computer.ShowUI();
         else
-            _room.Player.enabled = true;
+            Room.Player.enabled = true;
     }
 
     public void Deactivate()
     {
         enabled = false;
-        _room.Player.enabled = false;
-        
-        if (_computer != null && _computer.InterfaceController != null)
-            _computer.InterfaceController.enabled = false;
+        Room.Player.enabled = false;
+
+        if (Computer != null && Computer.InterfaceController != null)
+            Computer.InterfaceController.enabled = false;
     }
-    
+
     public void TurnOnVisually()
     {
-        if (_computer != null)
-            _computer.TurnOn();
+        if (Computer != null)
+            Computer.TurnOn();
     }
-    
+
     public void ShowUI()
     {
-        if (_computer != null)
-            _computer.ShowUI();
+        if (Computer != null)
+            Computer.ShowUI();
     }
 
     public void RunGameplay()
     {
-        if (_computer != null)
-            _computer.ShowGameplay();
+        if (Computer != null)
+            Computer.ShowGameplay();
     }
 
     private void Update()
@@ -71,13 +72,13 @@ public class LevelManager : MonoBehaviour
         {
             if (!GameManager.Instance.AnyDisplays)
                 return;
-            
-            if (_currentState == ELevelState.Gameplay 
-                && _computer != null 
-                && _computer.InterfaceController != null)
+
+            if (_currentState == ELevelState.Gameplay
+                && Computer != null
+                && Computer.InterfaceController != null)
             {
                 ShowUI();
-                _room.Player.enabled = false;
+                Room.Player.enabled = false;
             }
             else
             {

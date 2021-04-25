@@ -6,13 +6,13 @@ public class ComputerView : MonoBehaviour
 {
     public event Action OnUIShown;
     public event Action OnGameplayShown;
-    
-    [SerializeField] private Camera _camera = default;
+
+    private Camera Camera => GameManager.Instance.NextRoom.Camera;
     [SerializeField] private int _resolutionWidth = 1024;
     [SerializeField] private int _resolutionHeight = 768;
     [SerializeField] private bool _isSwitchedOn = true;
     public InterfaceController InterfaceController = default;
-    
+
     private Renderer _renderer;
     private RenderTexture _renderTexture;
 
@@ -21,7 +21,7 @@ public class ComputerView : MonoBehaviour
         _renderer = GetComponent<Renderer>();
         _renderTexture = new RenderTexture(_resolutionWidth, _resolutionHeight, 24);
         _renderer.material.mainTexture = _renderTexture;
-        
+
         ShowUI();
     }
 
@@ -44,13 +44,13 @@ public class ComputerView : MonoBehaviour
         else
             ShowGameplay();
     }
-    
+
     public void ShowGameplay()
     {
         if (!_isSwitchedOn)
             return;
 
-        SwitchCamera(_camera);
+        SwitchCamera(Camera);
         if (InterfaceController != null)
             InterfaceController.Deactivate();
         OnGameplayShown?.Invoke();
@@ -60,8 +60,8 @@ public class ComputerView : MonoBehaviour
     {
         if (InterfaceController != null)
             InterfaceController.UICamera.enabled = activeCamera == InterfaceController.UICamera;
-        
-        _camera.enabled = activeCamera == _camera;
+
+        Camera.enabled = activeCamera == Camera;
         activeCamera.targetTexture = _renderTexture;
     }
 }

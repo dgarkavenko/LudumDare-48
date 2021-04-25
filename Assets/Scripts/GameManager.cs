@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Player ActivePlayer => ActiveRoom.Player;
+    public Room NextRoom => ActiveRoom.NextRoom;
+    public Room PreviousRoom => ActiveRoom.PreviousRoom;
 
     [SerializeField] private Room _activeRoom;
 
