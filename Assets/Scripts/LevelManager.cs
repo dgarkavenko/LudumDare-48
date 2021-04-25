@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour, IRoomie
     public void Deactivate()
     {
         enabled = false;
+        Room.Player.enabled = false;
 
         if (Computer != null && Computer.InterfaceController != null)
             Computer.InterfaceController.enabled = false;
