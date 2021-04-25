@@ -5,14 +5,34 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public Player ActivePlayer => ActiveRoom.Player;
+
+
+    [SerializeField] private Room _activeRoom;
+
+    public Room ActiveRoom
+    {
+        get => _activeRoom;
+
+        set
+        {
+            if (_activeRoom != value)
+            {
+                _activeRoom.Player.enabled = false;
+                value.Player.enabled = true;
+                _activeRoom = value;
+            }
+        }
+    }
 
     public List<Display> Displays;
 
     private int firstVisibleDisplay;
 
-    private void Start()
+    private void Awake()
     {
         Instance = this;
+        ActivePlayer.enabled = true;
     }
 
     private void Update()
@@ -43,7 +63,12 @@ public class GameManager : MonoBehaviour
                     //firstDisplay.PlayerCamera.enabled = false;
                     firstVisibleDisplay++;
                 }
-            } 
+            }
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            ActivePlayer.DropBurden();
         }
     }
 }

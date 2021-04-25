@@ -6,52 +6,59 @@ using UnityEngine.UI;
 
 public class PlayerInteractionController : MonoBehaviour
 {
-    [SerializeField] private MouseInteractionDetector _interactionDetector = default;
+
+    public Player ActivePlayer => GameManager.Instance.ActivePlayer;
+
     [SerializeField] private Transform _mainCharTransform = default;
-    
+
     [SerializeField] private Image _targetMarkerObject = default;
     [SerializeField] private Color _defaultColor = Color.white;
     [SerializeField] private Color _interactionColor = Color.green;
-
+    [SerializeField] private float _maxDistance;
+    [SerializeField] private float _radius;
     [SerializeField] private Vector3 _transferOffset = new Vector3(1, 1, 1);
 
     public Transferrable Transferrable { get; private set; }
     private Transform _transferTransform;
+    private RaycastHit _hit;
+
+    private InteractableObject _interactable;
+    public InteractableObject Interactable
+    {
+        get => _interactable;
+        set
+        {
+            if (_interactable == value)
+                return;
+
+            _interactable?.Focus(false, ActivePlayer);
+            value?.Focus(true, ActivePlayer);
+
+            _interactable = value;
+        }
+    }
+
+    public LayerMask InteractiveLayer;
 
     private void Update()
     {
-        _targetMarkerObject.color = _interactionDetector.AnyHitTarget
-            ? _interactionColor
-            : _defaultColor;
+        var _camera = ActivePlayer.Camera;
 
-        if (_interactionDetector.AnyHitTarget && Input.GetMouseButtonDown(0))
-            TryInteract();
-        
-        Transfer();
+        var center = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0);
+        var ray = _camera.ScreenPointToRay(center);
+
+        var hit = Physics.SphereCast(ray, _radius, out _hit, _maxDistance, layerMask: InteractiveLayer);
+
+        Interactable = hit ? _hit.transform.GetComponent<InteractableObject>() : null;
+
+        if (Interactable && Input.GetMouseButtonDown(0))
+            Interact();
     }
 
-    private void TryInteract()
+    private void Interact()
     {
-        var interactable = _interactionDetector.Interacteable;
-        if (interactable.CanInteract(this))
-            interactable.Interact(this);
+        if (Interactable.CanInteract(ActivePlayer))
+            Interactable.Interact(ActivePlayer);
     }
 
-    private void Transfer()
-    {
-        if (_transferTransform == null)
-            return;
-
-        _transferTransform.position = _mainCharTransform.position + _mainCharTransform.rotation * _transferOffset;
-    }
-
-    public void Transfer(Transferrable transferring)
-    {
-        Transferrable = transferring;
-        _transferTransform = Transferrable.transform;
-        
-        var transferCollider = Transferrable.GetComponent<Collider>();
-        if (transferCollider != null)
-            transferCollider.enabled = false;
-    }
 }

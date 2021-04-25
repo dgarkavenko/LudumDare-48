@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class Display : MonoBehaviour
-{ 
+public class Display : InteractableObject
+{
     public AnimationCurve ZoomInCurve;
     public AnimationCurve ZoomOutCurve;
 
@@ -16,6 +16,7 @@ public class Display : MonoBehaviour
 
     public FirstPersonController Player;
     public Camera PlayerCamera;
+    public Room ParentRoom;
     public Room NextRoom;
 
     private (Vector3, Quaternion) original;
@@ -29,28 +30,28 @@ public class Display : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentState != State.Idle)
-            return;
-
-        var raycastHitsCount = Physics.RaycastNonAlloc(
-            origin: PlayerCamera.transform.position,
-            results: raycastHits,
-            direction: PlayerCamera.transform.forward,
-            maxDistance: 2.2f,
-            layerMask: layerMask,
-            queryTriggerInteraction: QueryTriggerInteraction.Collide
-        );
-
-        for (var i = 0; i < raycastHitsCount; i++)
-        {
-            if (raycastHits[i].transform == this.transform)
-            {
-                if (CurrentState == State.Idle && Input.GetKeyDown(KeyCode.E))
-                    EnterUI();
-
-                break;
-            }
-        }
+        // if (CurrentState != State.Idle)
+        //     return;
+        //
+        // var raycastHitsCount = Physics.RaycastNonAlloc(
+        //     origin: PlayerCamera.transform.position,
+        //     results: raycastHits,
+        //     direction: PlayerCamera.transform.forward,
+        //     maxDistance: 2.2f,
+        //     layerMask: layerMask,
+        //     queryTriggerInteraction: QueryTriggerInteraction.Collide
+        // );
+        //
+        // for (var i = 0; i < raycastHitsCount; i++)
+        // {
+        //     if (raycastHits[i].transform == this.transform)
+        //     {
+        //         if (CurrentState == State.Idle && Input.GetKeyDown(KeyCode.E))
+        //             EnterUI();
+        //
+        //         break;
+        //     }
+        // }
     }
 
     public void EnterUI()
@@ -81,7 +82,7 @@ public class Display : MonoBehaviour
     {
         CurrentState = State.ControllingNextRoom;
         GameManager.Instance.Displays.Add(this);
-        NextRoom.Player.enabled = true;
+        GameManager.Instance.ActiveRoom = NextRoom;
     }
 
     public IEnumerator MakeDisappear()
@@ -99,7 +100,7 @@ public class Display : MonoBehaviour
         CurrentState = State.ZoomingOut;
         Cursor.lockState = CursorLockMode.Locked;
 
-        NextRoom.Player.enabled = false;
+        GameManager.Instance.ActiveRoom = ParentRoom;
 
         yield return Zoom(
             ZoomOutDuration,
@@ -109,7 +110,6 @@ public class Display : MonoBehaviour
         );
 
         CurrentState = State.Idle;
-        Player.enabled = true;
     }
 
     private IEnumerator Zoom(float duration, AnimationCurve curve, (Vector3, Quaternion) from, (Vector3, Quaternion) to)
@@ -136,5 +136,24 @@ public class Display : MonoBehaviour
         UI,
         ControllingNextRoom,
         ZoomingOut
+    }
+
+    public override bool CanInteract(Player player)
+    {
+        return base.CanInteract(player) && CurrentState == State.Idle;
+    }
+
+    public override void Interact(Player player)
+    {
+        if (RequiresItem)
+            base.Interact(player);
+        else
+            EnterUI();
+    }
+
+    public override void AcceptRequiredItem(Transferrable requiredItem)
+    {
+        RequiresItem = null;
+        requiredItem.transform.position = transform.position;
     }
 }

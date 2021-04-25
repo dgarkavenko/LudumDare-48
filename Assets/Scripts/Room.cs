@@ -7,7 +7,7 @@ public class Room : MonoBehaviour
     public bool StartingRoom;
 
     public LevelManager LevelManager;
-    public FirstPersonController Player;
-    public Camera Camera;
+    public Player Player;
+    public Camera Camera => Player.Camera;
     public List<Component> TurnOn;
 }
