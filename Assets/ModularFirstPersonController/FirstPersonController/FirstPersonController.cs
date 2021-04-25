@@ -138,7 +138,7 @@ public class FirstPersonController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        crosshairObject = GetComponentInChildren<Image>();
+        // crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
         playerCamera.fieldOfView = fov;
@@ -159,15 +159,15 @@ public class FirstPersonController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if(crosshair)
-        {
-            crosshairObject.sprite = crosshairImage;
-            crosshairObject.color = crosshairColor;
-        }
-        else
-        {
-            crosshairObject.gameObject.SetActive(false);
-        }
+        // if(crosshair)
+        // {
+        //     crosshairObject.sprite = crosshairImage;
+        //     crosshairObject.color = crosshairColor;
+        // }
+        // else
+        // {
+        //     crosshairObject.gameObject.SetActive(false);
+        // }
 
         #region Sprint Bar
 
@@ -187,10 +187,10 @@ public class FirstPersonController : MonoBehaviour
             sprintBarBG.rectTransform.sizeDelta = new Vector3(sprintBarWidth, sprintBarHeight, 0f);
             sprintBar.rectTransform.sizeDelta = new Vector3(sprintBarWidth - 2, sprintBarHeight - 2, 0f);
 
-            if(hideBarWhenFull)
-            {
-                sprintBarCG.alpha = 0;
-            }
+            // if(hideBarWhenFull)
+            // {
+            //     sprintBarCG.alpha = 0;
+            // }
         }
         else
         {
@@ -408,10 +408,10 @@ public class FirstPersonController : MonoBehaviour
                         Crouch();
                     }
 
-                    if (hideBarWhenFull && !unlimitedSprint)
-                    {
-                        sprintBarCG.alpha += 5 * Time.deltaTime;
-                    }
+                    // if (hideBarWhenFull && !unlimitedSprint)
+                    // {
+                    //     sprintBarCG.alpha += 5 * Time.deltaTime;
+                    // }
                 }
 
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
@@ -421,10 +421,10 @@ public class FirstPersonController : MonoBehaviour
             {
                 isSprinting = false;
 
-                if (hideBarWhenFull && sprintRemaining == sprintDuration)
-                {
-                    sprintBarCG.alpha -= 3 * Time.deltaTime;
-                }
+                // if (hideBarWhenFull && sprintRemaining == sprintDuration)
+                // {
+                //     sprintBarCG.alpha -= 3 * Time.deltaTime;
+                // }
 
                 targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
 
