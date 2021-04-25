@@ -8,7 +8,6 @@ public class ComputerView : MonoBehaviour
     public event Action OnGameplayShown;
     
     [SerializeField] private Camera _camera = default;
-    [SerializeField] private Camera _uiCamera = default;
     [SerializeField] private int _resolutionWidth = 1024;
     [SerializeField] private int _resolutionHeight = 768;
     [SerializeField] private bool _isSwitchedOn = true;
@@ -37,11 +36,9 @@ public class ComputerView : MonoBehaviour
         if (!_isSwitchedOn)
             return;
 
-        if (_uiCamera != null)
+        if (InterfaceController != null)
         {
-            SwitchCamera(_uiCamera);
-            if (InterfaceController != null)
-                InterfaceController.Activate();
+            SwitchCamera(InterfaceController.UICamera);
             OnUIShown?.Invoke();
         }
         else
@@ -61,8 +58,8 @@ public class ComputerView : MonoBehaviour
 
     private void SwitchCamera(Camera activeCamera)
     {
-        if (_uiCamera != null)
-            _uiCamera.enabled = activeCamera == _uiCamera;
+        if (InterfaceController != null)
+            InterfaceController.UICamera.enabled = activeCamera == InterfaceController.UICamera;
         
         _camera.enabled = activeCamera == _camera;
         activeCamera.targetTexture = _renderTexture;

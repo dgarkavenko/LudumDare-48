@@ -13,6 +13,8 @@ public class InterfaceController : MonoBehaviour
     [SerializeField] private Image _cursor = default;
     [SerializeField] private RectTransform _uiRoot = default;
 
+    public Camera UICamera => _uiCamera;
+    
     private float _width;
     private float _height;
     

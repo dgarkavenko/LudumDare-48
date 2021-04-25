@@ -69,12 +69,17 @@ public class LevelManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_currentState == ELevelState.Gameplay && !_room.StartingRoom)
+            if (!GameManager.Instance.AnyDisplays)
+                return;
+            
+            if (_currentState == ELevelState.Gameplay 
+                && _computer != null 
+                && _computer.InterfaceController != null)
             {
                 ShowUI();
                 _room.Player.enabled = false;
             }
-            else if (GameManager.Instance.AnyDisplays)
+            else
             {
                 GameManager.Instance.ZoomOutDisplay();
             }
