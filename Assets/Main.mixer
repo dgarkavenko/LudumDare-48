@@ -28,7 +28,11 @@ AudioMixerSnapshotController:
   m_Name: Room 4
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 46b1bf35dfe04264db6e2daebd4fc3af
-  m_FloatValues: {}
+  m_FloatValues:
+    53357db98b23e9d438cbb3094cb23818: -0.03766793
+    3a920d1c033d7f04aaa1ef86852c6554: -80
+    bbd89aae575daeb4391101ec76937d59: -80
+    b0a655af3ffc58049ad598ce34ea375d: -80
   m_TransitionOverrides: {}
 --- !u!243 &-6089784915857644739
 AudioMixerGroupController:
@@ -86,7 +90,10 @@ AudioMixerSnapshotController:
   m_Name: Room 3
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: b07890518233c9749b6bdc7c940b529a
-  m_FloatValues: {}
+  m_FloatValues:
+    53357db98b23e9d438cbb3094cb23818: -80
+    bbd89aae575daeb4391101ec76937d59: -80
+    cc42d55fcda49aa41924061000699de4: -80
   m_TransitionOverrides: {}
 --- !u!245 &-1936109360432941049
 AudioMixerSnapshotController:
@@ -97,7 +104,9 @@ AudioMixerSnapshotController:
   m_Name: Room 5
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 2fc02c237127e574bb4b80cfe7cf89a5
-  m_FloatValues: {}
+  m_FloatValues:
+    53357db98b23e9d438cbb3094cb23818: -80
+    bbd89aae575daeb4391101ec76937d59: -80
   m_TransitionOverrides: {}
 --- !u!243 &-1781739379837051000
 AudioMixerGroupController:
@@ -128,9 +137,11 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 7dd8521d942711f42a0c45aa656e172c
   m_FloatValues:
-    53357db98b23e9d438cbb3094cb23818: -80
+    53357db98b23e9d438cbb3094cb23818: -3.5922942
     3a920d1c033d7f04aaa1ef86852c6554: -80
-    bbd89aae575daeb4391101ec76937d59: -19.928473
+    bbd89aae575daeb4391101ec76937d59: -6.991066
+    cc42d55fcda49aa41924061000699de4: -11.000075
+    b0a655af3ffc58049ad598ce34ea375d: -2.2889833
   m_TransitionOverrides: {}
 --- !u!241 &24100000
 AudioMixerController:
@@ -177,7 +188,7 @@ AudioMixerController:
     - 9e8d2a1da8a5cb145bbb370a23863719
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -1619310179150716124}
+  m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
