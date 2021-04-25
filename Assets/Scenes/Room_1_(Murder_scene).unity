@@ -1833,6 +1833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Detective_room_Props
       objectReference: {fileID: 0}
+    - target: {fileID: 975833227252740797, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1394825266164386318, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
       propertyPath: m_RootOrder
       value: 0
