@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -13,6 +14,26 @@ public class Room : MonoBehaviour
     public List<Component> TurnOn;
     public Room NextRoom;
     public AudioMixerSnapshot MixerSnapshot;
+
+
+    public float TimeSpentInRoom;
+    private int _upcomingEventIndex = 0;
+    public RoomEvent[] RoomEvents;
+
+    public Turnable[] PowerRequirement;
+
+    private bool _isDirty = true;
+    private bool _turnables = false;
+    public bool PowerIsOn
+    {
+        get
+        {
+            if (_isDirty)
+                _turnables = PowerRequirement.Length == 0 || PowerRequirement.All(x => x.State == Turnable.ETurnableState.On);
+
+            return _turnables;
+        }
+    }
 
     [HideInInspector]
     public Room PreviousRoom;
@@ -29,7 +50,26 @@ public class Room : MonoBehaviour
             if (roomie != null)
                 roomie.ParentRoom = this;
 
+        foreach (var turnable in PowerRequirement)
+            turnable.StateChangedAction += StateChangedAction;
+
         NextRoom?.Init(this);
+    }
+
+    private void StateChangedAction(Turnable.ETurnableState obj)
+    {
+        _isDirty = true;
+        if (PowerIsOn)
+        {
+
+        }
+        else
+        {
+
+
+            if (Display == GameManager.Instance.Displays.Last())
+                GameManager.Instance.ZoomOutDisplay();
+        }
     }
 
     public void Focus(bool on)
@@ -40,5 +80,38 @@ public class Room : MonoBehaviour
             LevelManager.Activate();
         else
             LevelManager.Deactivate();
+    }
+
+    public void Update()
+    {
+        if (this == GameManager.Instance.ActiveRoom)
+            TimeSpentInRoom += Time.deltaTime;
+
+        for (int i = _upcomingEventIndex; i < RoomEvents.Length; i++)
+        {
+            if (TimeSpentInRoom > RoomEvents[i].TimeSinceRoomActive)
+            {
+                RoomEvents[i].Invoke();
+                _upcomingEventIndex++;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+    }
+
+    [System.Serializable]
+    public class RoomEvent
+    {
+        public float TimeSinceRoomActive;
+        public Turnable Turnable;
+        public Turnable.ETurnableState TargetState;
+
+        public void Invoke()
+        {
+            Turnable.State = TargetState;
+        }
     }
 }
