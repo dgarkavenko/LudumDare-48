@@ -239,7 +239,6 @@ GameObject:
   - component: {fileID: 6887678633965880266}
   - component: {fileID: 7510360051662097519}
   - component: {fileID: 5755283548676978853}
-  - component: {fileID: 5747465510058772318}
   - component: {fileID: 4815002388014957282}
   - component: {fileID: 7283839764267055207}
   m_Layer: 6
@@ -323,24 +322,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5747465510058772318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6115364467848370544}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &4815002388014957282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab6b0c057826a640a9acb1252bfa861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiresItem: {fileID: 0}
   ZoomInCurve:
     serializedVersion: 2
     m_Curve:
@@ -407,6 +387,8 @@ MonoBehaviour:
   CameraTargetPosition: {fileID: 20360955}
   CameraDisappearPosition: {fileID: 179475342}
   CurrentState: 0
+  _equipment: 0
+  _fullyEquipedFlag: 3
 --- !u!65 &7283839764267055207
 BoxCollider:
   m_ObjectHideFlags: 0

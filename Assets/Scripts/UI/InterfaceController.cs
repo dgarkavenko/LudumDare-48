@@ -15,6 +15,7 @@ public class InterfaceController : MonoBehaviour
     [SerializeField] private RectTransform _cursor = default;
     [SerializeField] private RectTransform _uiRoot = default;
     [SerializeField] private bool _mouseActive = true;
+    [SerializeField] private UIInteractableElement[] _interactables = default;
 
     public Camera UICamera => _uiCamera;
 
@@ -22,7 +23,7 @@ public class InterfaceController : MonoBehaviour
     private float _height;
 
     private Vector3[] _elementCorners = new Vector3[4];
-    private readonly List<UIInteractableElement> _interactables = new List<UIInteractableElement>();
+    
 
     private void Start()
     {
@@ -63,13 +64,13 @@ public class InterfaceController : MonoBehaviour
 
     public void RegisterUIElements(IEnumerable<UIInteractableElement> elements)
     {
-        _interactables.AddRange(elements);
+        // _interactables.AddRange(elements);
     }
 
     public void RemoveUIElements(IEnumerable<UIInteractableElement> elements)
     {
-        foreach (var element in elements)
-            _interactables.Remove(element);
+        // foreach (var element in elements)
+        //     _interactables.Remove(element);
     }
 
     protected virtual void Update()
@@ -93,10 +94,16 @@ public class InterfaceController : MonoBehaviour
 
     private void CheckInteractions()
     {
+        var mouseClicked = Input.GetMouseButtonDown(0);
+        
         foreach (var interactable in _interactables)
         {
+            interactable.CheckMouseOver(_cursor.position);
+            
+            if (interactable.OnMouseOver && mouseClicked)
+                interactable.OnUIMouseClicked();
             //if (interactable.IsCollides(_cursor.position))
-              // TODO: onmouseover  
+            // TODO: onmouseover  
         }
     }
 
