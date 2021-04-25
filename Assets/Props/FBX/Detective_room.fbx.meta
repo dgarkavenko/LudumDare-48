@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 27ced3e6b727de542a6a6e61b9a8feb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: 1
     second: {fileID: 2100000, guid: d76791883ef614547bdf358d1f052d05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1.001
+    second: {fileID: 2100000, guid: b929245300c387c4fae63dd2afcc150e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -29,6 +39,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 2
     second: {fileID: 2100000, guid: cf034de1a5a89954ba341fb12bc11e64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 2.001
+    second: {fileID: 2100000, guid: 318e10b611efa2e47964ded964042c10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 3
+    second: {fileID: 2100000, guid: 9e53eaa739c658b49b3d78fd16a8ed6a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -174,6 +194,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Frames
     second: {fileID: 2100000, guid: ede5ea8cf9e3edd48ab68e7fe0715a79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jornal
+    second: {fileID: 2100000, guid: b4469674be57f47499e54e58676a3743, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jornal_03
+    second: {fileID: 2100000, guid: 10ec6783f0a6a2040aba3a4db7f1cfa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jornal_05
+    second: {fileID: 2100000, guid: f06cc753142e5d740aa71a3f58a755c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jornal_05.001
+    second: {fileID: 2100000, guid: 0261804cf2940aa4090ac0b2fbb1fdfd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -384,6 +424,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: default02
     second: {fileID: 2100000, guid: 498eaeee2770e2c42a2980c7e4814712, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jornal_02
+    second: {fileID: 2100000, guid: 528f04770726a464a8189d100f3dfe2f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
