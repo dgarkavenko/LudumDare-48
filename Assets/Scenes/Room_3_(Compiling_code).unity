@@ -4304,5 +4304,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corporation_room_props
       objectReference: {fileID: 0}
+    - target: {fileID: 7770010564884388105, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
