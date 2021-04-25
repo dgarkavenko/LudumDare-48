@@ -140,7 +140,10 @@ public class Display : InteractableObject, IRoomie
 
     public override bool CanInteract(Player player)
     {
-        return base.CanInteract(player) && CurrentState == State.Idle && ParentRoom.PowerIsOn;
+        if (RequiresItem != null || player.Burden == RequiresItem)
+            return true;
+
+        return CurrentState == State.Idle && ParentRoom.PowerIsOn;
     }
 
     public override void Interact(Player player)

@@ -14,8 +14,10 @@ public class Turnable : InteractableObject
 
     [SerializeField] private ETurnableState _state = ETurnableState.Off;
     public bool OnlyTurnsOn;
+    public float TransitionTime;
     public Action<ETurnableState> StateChangedAction;
     private Collider[] _colliders;
+
 
     public override void OnValidate()
     {

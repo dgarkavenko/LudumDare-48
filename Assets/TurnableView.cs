@@ -7,7 +7,9 @@ using UnityEngine;
 public class TurnableView : MonoBehaviour
 {
     public Turnable[] RequiresOn;
-    public bool TurnablesAreOn => RequiresOn.All(x => x.State == Turnable.ETurnableState.On);
+    public Turnable.ETurnableState State;
+
+    public bool TurnablesAreOn => RequiresOn.All(x => x.State == State);
 
     private void Start()
     {
