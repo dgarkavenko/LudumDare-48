@@ -7,9 +7,17 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Transferrable : InteractableObject
 {
+    [System.Flags]
+    public enum ETransferrableId
+    {
+        Floppy = 1,
+        Keyboard = 1 << 1
+    }
+
     public Vector3 CarryOffset;
     public Vector3 CarryRotation;
     public bool CanDrop;
+    public ETransferrableId Id;
 
     private Rigidbody _rigidbody;
     private Rigidbody Rigidbody

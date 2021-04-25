@@ -28,13 +28,9 @@ public class PlayerInteractionController : MonoBehaviour
         get => _interactable;
         set
         {
-            if (_interactable == value)
-                return;
-
-            _interactable?.Focus(false, ActivePlayer);
-            value?.Focus(true, ActivePlayer);
-
             _interactable = value;
+            ActivePlayer.Outliner.Selection = _interactable;
+            ActivePlayer.Outliner.CanInteract = _interactable && _interactable.CanInteract(ActivePlayer);
         }
     }
 
