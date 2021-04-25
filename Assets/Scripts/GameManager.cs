@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
             if (_activeRoom != value)
             {
                 _activeRoom.Player.enabled = false;
+                _activeRoom.LevelManager.Deactivate();
+
                 value.Player.enabled = true;
+                value.LevelManager.Activate();
+
                 _activeRoom = value;
             }
         }

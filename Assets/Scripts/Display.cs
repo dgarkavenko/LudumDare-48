@@ -83,7 +83,6 @@ public class Display : InteractableObject
         CurrentState = State.ControllingNextRoom;
         GameManager.Instance.Displays.Add(this);
         GameManager.Instance.ActiveRoom = NextRoom;
-        NextRoom.LevelManager.Activate();
     }
 
     public IEnumerator MakeDisappear()
@@ -102,7 +101,6 @@ public class Display : InteractableObject
         Cursor.lockState = CursorLockMode.Locked;
 
         GameManager.Instance.ActiveRoom = ParentRoom;
-        NextRoom.LevelManager.Deactivate();
 
         yield return Zoom(
             ZoomOutDuration,
@@ -112,7 +110,6 @@ public class Display : InteractableObject
         );
 
         CurrentState = State.Idle;
-        LevelManager.Activate();
     }
 
     private IEnumerator Zoom(float duration, AnimationCurve curve, (Vector3, Quaternion) from, (Vector3, Quaternion) to)
