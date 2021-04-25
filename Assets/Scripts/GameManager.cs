@@ -81,11 +81,14 @@ public class GameManager : MonoBehaviour
     public void Descend()
     {
         ActiveRoom = ActiveRoom.NextRoom;
+        ActiveRoom.MixerSnapshot.TransitionTo(2f);
     }
 
     public void Ascend()
     {
-        if (ActiveRoom.PreviousRoom != null)
+        if (ActiveRoom.PreviousRoom != null) {
             ActiveRoom = ActiveRoom.PreviousRoom;
+            ActiveRoom.MixerSnapshot.TransitionTo(2f);
+        }
     }
 }
