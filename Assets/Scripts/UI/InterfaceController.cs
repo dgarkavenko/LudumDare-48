@@ -93,4 +93,9 @@ public class InterfaceController : MonoBehaviour
               // TODO: onmouseover  
         }
     }
+
+    public virtual bool HandleEnter()
+    {
+        return true;
+    }
 }

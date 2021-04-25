@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour, IRoomie
             if (_currentState == ELevelState.UI)
                 Computer.ShowUI();
             else
-                Computer.ShowGameplay();
+                Computer.HandleEnter();
         }
     }
 
@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour, IRoomie
     public void RunGameplay()
     {
         if (Computer != null)
-            Computer.ShowGameplay();
+            Computer.HandleEnter();
     }
 
     private void Update()
