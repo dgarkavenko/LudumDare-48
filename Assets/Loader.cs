@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Loader : MonoBehaviour
 {
+    public bool LoadOnStart = true;
     public const int ScenesCount = 8;
     private int _loaded = 0;
     public Image Fill;
@@ -18,6 +19,11 @@ public class Loader : MonoBehaviour
     void Start()
     {
         _startTime = Time.time;
+        if (LoadOnStart)
+        {
+            Launched = true;
+            Load(_loaded + 1);
+        }
     }
 
     private void Update()
@@ -32,9 +38,7 @@ public class Loader : MonoBehaviour
         }
 
         if (_async != null)
-        {
             Fill.fillAmount = _async.progress * (_loaded + 1) / ScenesCount;
-        }
     }
 
 
