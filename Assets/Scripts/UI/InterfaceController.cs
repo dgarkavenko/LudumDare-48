@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.WSA;
-using Cursor = UnityEngine.Cursor;
 
 public class InterfaceController : MonoBehaviour
 {
@@ -22,10 +16,7 @@ public class InterfaceController : MonoBehaviour
     private float _width;
     private float _height;
 
-    private Vector3[] _elementCorners = new Vector3[4];
-    
-
-    private void Start()
+    protected virtual void Start()
     {
         _width = _uiRoot.sizeDelta.x;
         _height = _uiRoot.sizeDelta.y;
@@ -59,7 +50,6 @@ public class InterfaceController : MonoBehaviour
     public void SetVisibleStatus(bool isTurnedOn)
     {
         _uiRoot.gameObject.SetActive(isTurnedOn);
-        Deactivate();
     }
 
     public void RegisterUIElements(IEnumerable<UIInteractableElement> elements)

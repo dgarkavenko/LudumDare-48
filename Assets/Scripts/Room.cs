@@ -60,7 +60,8 @@ public class Room : MonoBehaviour
     {
         _isDirty = true;
         
-        LevelManager.SetComputerTurnOnStatus(PowerIsOn);
+        ComputerView.SetTurnedOnStatus(PowerIsOn);
+        // LevelManager.SetComputerTurnOnStatus(PowerIsOn);
 
         if (!PowerIsOn)
         {
