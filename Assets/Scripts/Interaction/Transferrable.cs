@@ -11,13 +11,16 @@ public class Transferrable : InteractableObject
     public enum ETransferrableId
     {
         Floppy = 1,
-        Keyboard = 1 << 1
+        Keyboard = 1 << 1,
+        Flashlight = 1 << 2,
     }
 
     public Vector3 CarryOffset;
     public Vector3 CarryRotation;
     public bool CanDrop;
     public ETransferrableId Id;
+
+    public Light Light;
 
     private Rigidbody _rigidbody;
     private Rigidbody Rigidbody
@@ -45,6 +48,9 @@ public class Transferrable : InteractableObject
             Rigidbody.isKinematic = true;
 
         player.Burden = this;
+
+        if (Light)
+            Light.enabled = true;
     }
 
     public override void AcceptRequiredItem(Transferrable requiredItem)
@@ -66,6 +72,9 @@ public class Transferrable : InteractableObject
 
             foreach (var collider in GetComponentsInChildren<Collider>())
                 collider.enabled = true;
+
+            if (Light)
+                Light.enabled = !GameManager.Instance.ActiveRoom.PowerIsOn;
         }
     }
 }

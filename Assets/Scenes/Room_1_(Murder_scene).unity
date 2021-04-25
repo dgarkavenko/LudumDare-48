@@ -257,16 +257,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -9141880161318499798, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
   m_PrefabInstance: {fileID: 343107843}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &343107857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2628413175262475210, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
-  m_PrefabInstance: {fileID: 343107843}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &343107858 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3974379501390722418, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
-  m_PrefabInstance: {fileID: 343107843}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &343107859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2730364664848169807, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
@@ -685,34 +675,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5597564025038285709, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
---- !u!64 &343107927
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343107857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8070374320365578059, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
---- !u!64 &343107928
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343107858}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7596297470094586712, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
 --- !u!64 &343107929
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1831,10 +1793,6 @@ PrefabInstance:
     - target: {fileID: 975833227252740797, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
       propertyPath: m_Name
       value: Detective_room_Props
-      objectReference: {fileID: 0}
-    - target: {fileID: 975833227252740797, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1394825266164386318, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
       propertyPath: m_RootOrder
