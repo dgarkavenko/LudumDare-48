@@ -46,9 +46,4 @@ public class UIConsoleScreen : MonoBehaviour
         foreach (var textLine in text)
             await ShowSingleLine(textLine);
     }
-    
-    private void Update()
-    {
-        throw new NotImplementedException();
-    }
 }
