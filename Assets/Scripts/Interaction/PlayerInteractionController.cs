@@ -51,7 +51,8 @@ public class PlayerInteractionController : MonoBehaviour
 
         Interactable = hit ? _hit.transform.GetComponent<InteractableObject>() : null;
 
-        if (Interactable && Input.GetMouseButtonDown(0))
+        if (Interactable && (Input.GetMouseButtonDown(0)
+            || Input.GetKeyDown(KeyCode.E)))
             Interact();
     }
 
