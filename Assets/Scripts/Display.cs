@@ -15,8 +15,8 @@ public class Display : InteractableObject, IRoomie
 
     public State CurrentState = State.Idle;
 
-    public LevelManager LevelManager;
-    public Camera PlayerCamera;
+    public LevelManager LevelManager => ParentRoom.LevelManager;
+    public Camera PlayerCamera => ParentRoom.Camera;
 
     private (Vector3, Quaternion) original;
     private RaycastHit[] raycastHits = new RaycastHit[32];
