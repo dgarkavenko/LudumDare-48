@@ -22,16 +22,16 @@ public class ComputerView : MonoBehaviour
         _renderTexture = new RenderTexture(_resolutionWidth, _resolutionHeight, 24);
         _renderer.material.mainTexture = _renderTexture;
 
-        ShowUI();
+        ShowUI(false);
     }
 
     public void TurnOn()
     {
         _isSwitchedOn = true;
-        ShowUI();
+        ShowUI(false);
     }
 
-    public void ShowUI()
+    public void ShowUI(bool activateInput = true)
     {
         if (!_isSwitchedOn)
             return;
@@ -39,6 +39,8 @@ public class ComputerView : MonoBehaviour
         if (InterfaceController != null)
         {
             SwitchCamera(InterfaceController.UICamera);
+            if (activateInput)
+                InterfaceController.enabled = true;
             OnUIShown?.Invoke();
         }
         else
