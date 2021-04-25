@@ -392,10 +392,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UILevel1
       objectReference: {fileID: 0}
-    - target: {fileID: 7447449000263786171, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
 --- !u!4 &5015763972685411463 stripped

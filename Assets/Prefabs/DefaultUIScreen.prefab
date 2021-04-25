@@ -117,6 +117,13 @@ MonoBehaviour:
   _cursor: {fileID: 4223205747780156654}
   _uiRoot: {fileID: 8304732796915005751}
   _mouseActive: 1
+  _interactables:
+  - {fileID: 8432421997366329597}
+  - {fileID: 7971435908689109709}
+  - {fileID: 112584411235253091}
+  - {fileID: 3106149033000880546}
+  - {fileID: 5326672857567514626}
+  - {fileID: 5352611066116628696}
 --- !u!1 &1300511241923995904
 GameObject:
   m_ObjectHideFlags: 0
