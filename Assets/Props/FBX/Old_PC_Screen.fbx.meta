@@ -3,11 +3,16 @@ guid: 5c2bb32a5e290b143a98177329890ece
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F507SCR
+    second: {fileID: 2100000, guid: 9e2af4c6e98cc844fa1a3cc938c9491f, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
