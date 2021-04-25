@@ -59,7 +59,6 @@ public class Room : MonoBehaviour
     private void StateChangedAction(Turnable.ETurnableState obj)
     {
         _isDirty = true;
-        
         LevelManager.SetComputerTurnOnStatus(PowerIsOn);
 
         if (!PowerIsOn)

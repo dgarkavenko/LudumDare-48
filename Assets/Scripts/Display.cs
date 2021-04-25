@@ -22,8 +22,11 @@ public class Display : InteractableObject, IRoomie
     public class EquipmentPosition
     {
         public Transferrable.ETransferrableId Id;
-        public Vector3 Position;
+        public Transform Transform;
+        public AudioClip Clip;
     }
+
+    public EquipmentPosition[] EquipmentPositions;
 
     public Transferrable.ETransferrableId Equipment
     {
@@ -182,7 +185,17 @@ public class Display : InteractableObject, IRoomie
     public override void AcceptRequiredItem(Transferrable requiredItem)
     {
         Equipment |= requiredItem.Id;
-        requiredItem.transform.position = transform.position;
+
+        for (int i = 0; i < EquipmentPositions.Length; i++)
+        {
+            if (EquipmentPositions[i].Id == requiredItem.Id)
+            {
+                requiredItem.transform.SetPositionAndRotation(EquipmentPositions[i].Transform.position, EquipmentPositions[i].Transform.rotation);
+                return;
+            }
+        }
+
+        requiredItem.transform.SetPositionAndRotation(transform.position, transform.rotation);
     }
 
     public Room ParentRoom { get; set; }
