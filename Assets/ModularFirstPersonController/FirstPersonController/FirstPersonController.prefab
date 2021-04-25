@@ -187,6 +187,7 @@ MonoBehaviour:
   _fpc: {fileID: 4459864850019384740}
   Burden: {fileID: 0}
   HandsOffset: {x: 0.15, y: -0.1, z: 0.3}
+  Outliner: {fileID: 4361550721991976394}
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +400,7 @@ GameObject:
   - component: {fileID: 4459864851310106426}
   - component: {fileID: 4459864851310106427}
   - component: {fileID: 305937773}
+  - component: {fileID: 4361550721991976394}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -488,6 +490,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &4361550721991976394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864851310106424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e950cacae63d61a4e821edb397a8cd95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectionMode: 1
+  OutlineType: 0
+  AlphaMode: 1
+  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+  OccludedColor: {r: 0.5, g: 0.9, b: 0.3, a: 1}
+  AltColor: {r: 1, g: 0.2688679, b: 0.28396258, a: 1}
+  OutlineWidth: 0.2
+  OutlineHardness: 0.85
 --- !u!1 &4459864851397454630
 GameObject:
   m_ObjectHideFlags: 0

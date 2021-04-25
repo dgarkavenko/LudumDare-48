@@ -519,10 +519,6 @@ PrefabInstance:
       propertyPath: RequiresItem
       value: 
       objectReference: {fileID: 8255422287671726075}
-    - target: {fileID: 5747465510058772318, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
-      propertyPath: precomputeOutline
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6115364467848370544, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
       propertyPath: m_Name
       value: old_pc (1)
@@ -571,8 +567,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -57.448
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5747465510058772318, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
 --- !u!4 &71807702 stripped
 Transform:
@@ -2868,6 +2863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b79092559f1fc488774283683e28c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!114 &759600991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3730,6 +3726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b79092559f1fc488774283683e28c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!1 &913494733
 GameObject:
   m_ObjectHideFlags: 0
@@ -3980,6 +3977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b79092559f1fc488774283683e28c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!1 &993276532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6485,6 +6483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b79092559f1fc488774283683e28c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!1 &1790473793
 GameObject:
   m_ObjectHideFlags: 0
@@ -6752,6 +6751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b79092559f1fc488774283683e28c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!114 &1853845752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7294,6 +7294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b79092559f1fc488774283683e28c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!114 &1943529522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7978,6 +7979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b79092559f1fc488774283683e28c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!114 &2077800854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25835,7 +25837,7 @@ PrefabInstance:
       value: -57.448
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 5747465510058772318, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
 --- !u!4 &2070561691527502102 stripped
 Transform:
