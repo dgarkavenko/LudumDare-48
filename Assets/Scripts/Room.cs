@@ -19,9 +19,14 @@ public class Room : MonoBehaviour
     {
         PreviousRoom = previousRoom;
         Player = GetComponentInChildren<Player>();
-        LevelManager = GetComponentInChildren<LevelManager>();
         Display = GetComponentInChildren<Display>();
         ComputerView = GetComponentInChildren<ComputerView>();
+        LevelManager = GetComponentInChildren<LevelManager>();
+
+        foreach (var roomie in new[] {(IRoomie) Player, Display, ComputerView, LevelManager})
+            if (roomie != null)
+                roomie.ParentRoom = this;
+
         NextRoom?.Init(this);
     }
 

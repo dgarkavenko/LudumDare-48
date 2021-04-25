@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Display : InteractableObject
+public class Display : InteractableObject, IRoomie
 {
     public AnimationCurve ZoomInCurve;
     public AnimationCurve ZoomOutCurve;
@@ -154,4 +154,6 @@ public class Display : InteractableObject
         RequiresItem = null;
         requiredItem.transform.position = transform.position;
     }
+
+    public Room ParentRoom { get; set; }
 }

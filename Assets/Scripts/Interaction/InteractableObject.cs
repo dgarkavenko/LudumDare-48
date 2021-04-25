@@ -50,3 +50,9 @@ public abstract class InteractableObject : MonoBehaviour
 
     public abstract void AcceptRequiredItem(Transferrable requiredItem);
 }
+
+
+public interface IRoomie
+{
+    Room ParentRoom { get; set; }
+}

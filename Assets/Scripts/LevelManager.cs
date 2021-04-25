@@ -1,12 +1,12 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ComputerView))]
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IRoomie
 {
     public static LevelManager Current { get; private set; }
 
-    private static Room Room => GameManager.Instance.ActiveRoom;
-    private ComputerView Computer => GameManager.Instance.PreviousRoom ? GameManager.Instance.PreviousRoom.ComputerView : null;
+    private Room Room => ParentRoom;
+    private ComputerView Computer => ParentRoom.PreviousRoom ? ParentRoom.PreviousRoom .ComputerView : null;
 
     private ELevelState _currentState = ELevelState.UI;
 
@@ -86,6 +86,8 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
+
+    public Room ParentRoom { get; set; }
 }
 
 public enum ELevelState

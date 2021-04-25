@@ -5,7 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(FirstPersonController))]
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IRoomie
 {
     [SerializeField] private FirstPersonController _fpc;
 
@@ -38,4 +38,6 @@ public class Player : MonoBehaviour
     {
         _fpc.enabled = false;
     }
+
+    public Room ParentRoom { get; set; }
 }

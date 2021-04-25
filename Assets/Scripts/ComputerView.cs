@@ -2,12 +2,12 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
-public class ComputerView : MonoBehaviour
+public class ComputerView : MonoBehaviour, IRoomie
 {
     public event Action OnUIShown;
     public event Action OnGameplayShown;
 
-    private Camera Camera => GameManager.Instance.NextRoom.Camera;
+    private Camera Camera => ParentRoom.NextRoom.Camera;
     [SerializeField] private int _resolutionWidth = 1024;
     [SerializeField] private int _resolutionHeight = 768;
     [SerializeField] private bool _isSwitchedOn = true;
@@ -66,4 +66,6 @@ public class ComputerView : MonoBehaviour
         Camera.enabled = activeCamera == Camera;
         activeCamera.targetTexture = _renderTexture;
     }
+
+    public Room ParentRoom { get; set; }
 }
