@@ -3,12 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(ComputerView))]
 public class LevelManager : MonoBehaviour, IRoomie
 {
-    public static LevelManager Current { get; private set; }
-
     private Room Room => ParentRoom;
     private ComputerView Computer => ParentRoom.PreviousRoom ? ParentRoom.PreviousRoom .ComputerView : null;
 
-    private ELevelState _currentState = ELevelState.UI;
+    [SerializeField] private ELevelState _currentState = ELevelState.UI;
 
     private void Start()
     {
@@ -26,14 +24,14 @@ public class LevelManager : MonoBehaviour, IRoomie
     public void Activate()
     {
         enabled = true;
-        Current = this;
 
         if (Computer != null)
         {
             if (_currentState == ELevelState.UI)
                 Computer.ShowUI();
             else
-                Computer.HandleEnter();
+                RunGameplay();
+                // Computer.HandleEnter();
         }
     }
 
@@ -43,13 +41,18 @@ public class LevelManager : MonoBehaviour, IRoomie
         Room.Player.enabled = false;
 
         if (Computer != null && Computer.InterfaceController != null)
-            Computer.InterfaceController.enabled = false;
+            Computer.InterfaceController.Deactivate();
     }
 
-    public void TurnOnVisually()
+    public void SetComputerTurnOnStatus(bool status)
     {
-        if (Computer != null)
-            Computer.TurnOn();
+        if (Computer == null)
+            return;
+
+        if (status)
+            _currentState = ELevelState.UI;
+        
+        Computer.SetTurnedOnStatus(status);
     }
 
     public void ShowUI()
@@ -96,5 +99,6 @@ public class LevelManager : MonoBehaviour, IRoomie
 public enum ELevelState
 {
     UI,
-    Gameplay
+    Gameplay,
+    TurnedOff
 }

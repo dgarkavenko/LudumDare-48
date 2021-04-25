@@ -59,14 +59,11 @@ public class Room : MonoBehaviour
     private void StateChangedAction(Turnable.ETurnableState obj)
     {
         _isDirty = true;
-        if (PowerIsOn)
+        
+        LevelManager.SetComputerTurnOnStatus(PowerIsOn);
+
+        if (!PowerIsOn)
         {
-
-        }
-        else
-        {
-
-
             if (Display == GameManager.Instance.Displays.Last())
                 GameManager.Instance.ZoomOutDisplay();
         }
