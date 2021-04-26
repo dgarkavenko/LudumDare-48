@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: 0-Y
+    second: {fileID: 2100000, guid: e51721d351dbbb143b93794972906def, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 00-B L
+    second: {fileID: 2100000, guid: ccbc4a13d0c34e943a86b07411d3fb7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: 7896
     second: {fileID: 2100000, guid: bb1c87ef32d15dc47997c58aa8b4342b, type: 2}
   - first:
@@ -129,6 +139,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: wall_03
     second: {fileID: 2100000, guid: 5073ce136ce7f1b419ffecd0d0743f32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_141007058
+    second: {fileID: 2100000, guid: e3d5b2079f469fe45ab87b25d9f99e14, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
