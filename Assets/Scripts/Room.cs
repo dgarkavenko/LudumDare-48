@@ -75,7 +75,10 @@ public class Room : MonoBehaviour
 
     public void Focus(bool on)
     {
-        Player.enabled = on;
+        if (!on)
+            Player.enabled = false;
+        else
+            StartCoroutine(WaitForZoomOut());
 
         var scene = SceneManager.GetSceneByName(gameObject.name);
         SceneManager.SetActiveScene(scene);
@@ -84,6 +87,12 @@ public class Room : MonoBehaviour
             LevelManager.Activate();
         else
             LevelManager.Deactivate();
+
+        IEnumerator WaitForZoomOut()
+        {
+            yield return new WaitWhile(() => Display.CurrentState != Display.State.Idle);
+            Player.enabled = true;
+        }
     }
 
     public void Update()
