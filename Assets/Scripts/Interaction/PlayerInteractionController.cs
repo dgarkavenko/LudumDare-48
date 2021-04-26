@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Outline = cakeslice.Outline;
 
 public class PlayerInteractionController : MonoBehaviour
 {
@@ -28,11 +29,41 @@ public class PlayerInteractionController : MonoBehaviour
         get => _interactable;
         set
         {
-            _interactable = value;
-            ActivePlayer.Outliner.Selection = _interactable;
+            if (_interactable == value)
+                return;
 
             if (_interactable)
-                ActivePlayer.Outliner.CanInteract = _interactable.CanInteract(ActivePlayer);
+            {
+                var o = _interactable.GetComponentInChildren<Outline>(true);
+
+                if (o)
+                {
+                    GameObject.Destroy(o);
+                    GameManager.Instance.ActivePlayer.Outliner.RemoveOutline(o);
+                }
+            }
+
+            _interactable = value;
+
+            if (_interactable)
+            {
+                var outlineNew = _interactable.gameObject.GetComponentInChildren<Outline>();
+
+                if (outlineNew == null)
+                {
+                    var renderer = _interactable.GetComponentInChildren<Renderer>();
+                    if (renderer != null)
+                        outlineNew = renderer.gameObject.AddComponent<Outline>();
+                }
+
+                if (outlineNew)
+                {
+                    outlineNew.color = _interactable.CanInteract(ActivePlayer) ? 1 : 0;
+                    GameManager.Instance.ActivePlayer.Outliner.AddOutline(outlineNew);
+                }
+
+            }
+
         }
     }
 
