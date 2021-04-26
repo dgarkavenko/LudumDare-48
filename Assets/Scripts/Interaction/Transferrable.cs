@@ -50,7 +50,7 @@ public class Transferrable : InteractableObject
         player.Burden = this;
 
         if (Light)
-            Light.enabled = true;
+            Light.gameObject.SetActive(true);
     }
 
     public override void AcceptRequiredItem(Transferrable requiredItem)
