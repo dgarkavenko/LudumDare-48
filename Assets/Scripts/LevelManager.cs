@@ -8,16 +8,12 @@ public class LevelManager : MonoBehaviour, IRoomie
 
     [SerializeField] private ELevelState _currentState = ELevelState.UI;
 
-    private void Start()
+    private void Init()
     {
         if (Computer != null)
         {
             Computer.OnUIShown += () => _currentState = ELevelState.UI;
-            Computer.OnGameplayShown += () =>
-            {
-                _currentState = ELevelState.Gameplay;
-                Room.Player.enabled = true;
-            };
+            Computer.OnGameplayShown += () => { _currentState = ELevelState.Gameplay; };
         }
     }
 
@@ -78,7 +74,8 @@ public class LevelManager : MonoBehaviour, IRoomie
         if (!GameManager.Instance.AnyDisplays)
             return;
         
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Tab) 
+            || (Input.GetMouseButtonDown(1) && ParentRoom.Player.Burden != null))
         {
             GameManager.Instance.ZoomOutDisplay();
         }
@@ -93,11 +90,22 @@ public class LevelManager : MonoBehaviour, IRoomie
             else
             {
                 RunGameplay();
+                Room.Player.enabled = true;
             }
         }
     }
 
-    public Room ParentRoom { get; set; }
+
+    private Room _parentRoom;
+    public Room ParentRoom
+    {
+        get => _parentRoom;
+        set
+        {
+            _parentRoom = value;
+            Init();
+        }
+    }
 
     public ELevelState CurrentState => _currentState;
 }
