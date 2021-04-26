@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Loader : MonoBehaviour
 {
     public bool LoadOnStart = true;
-    public const int ScenesCount = 6;
+    public const int ScenesCount = 4;
     private int _loaded = 0;
     public Image Fill;
 
@@ -31,10 +31,7 @@ public class Loader : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time < _startTime + 1)
-            return;
-
-        if ((Input.anyKeyDown || Time.time > _startTime + 5) && !Launched)
+        if ((Input.anyKeyDown || Time.time > _startTime + 2) && !Launched)
         {
             Launched = true;
             Load(_loaded + 1);
