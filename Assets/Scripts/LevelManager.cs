@@ -40,15 +40,15 @@ public class LevelManager : MonoBehaviour, IRoomie
             Computer.InterfaceController.Deactivate();
     }
 
-    public void SetComputerTurnOnStatus(bool status)
+    public void SetComputerTurnOnStatus(bool isTurnedOn)
     {
         if (Computer == null)
             return;
 
-        if (status)
+        if (isTurnedOn)
             _currentState = ELevelState.UI;
 
-        Computer.SetTurnedOnStatus(status);
+        Computer.SetTurnedOnStatus(isTurnedOn);
     }
 
     public void ShowUI()

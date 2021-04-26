@@ -12,6 +12,7 @@ public class InterfaceControllerWithUI : InterfaceController
     [SerializeField] private int _loadTimeSec = 5;
 
     private bool _isMainScreen;
+    private bool _floppyInserted;
 
     protected override bool InputActive => base.InputActive && _isMainScreen;
     private Room _currentRoom;
@@ -56,26 +57,29 @@ public class InterfaceControllerWithUI : InterfaceController
         base.Init(currentRoom);
 
         _currentRoom = currentRoom;
+        IsSwitchedOff = !_currentRoom.PowerIsOn;
 
-        if (_currentRoom.Display.FullyEquiped)
+        if (_currentRoom.Display.FullyEquiped && !IsSwitchedOff)
         {
             _mainScreen.SetActive(true);
+            return;
         }
-        else
-        {
-            _currentRoom.Display.OnEquipmentChanged += DisplayEquipmentChangedHandler;
-            _mouseActive = (int)(_currentRoom.Display.Equipment & Transferrable.ETransferrableId.Keyboard) != 0;
-            _noInputWarning.SetActive(!_mouseActive);
-            _isMainScreen = (int)(_currentRoom.Display.Equipment & Transferrable.ETransferrableId.Floppy) != 0;
-            _mainScreen.SetActive(_isMainScreen);
-            _enterFloppyScreen.SetActive(!_isMainScreen);
-        }
+        
+        _currentRoom.Display.OnEquipmentChanged += DisplayEquipmentChangedHandler;
+        _mouseActive = (int)(_currentRoom.Display.Equipment & Transferrable.ETransferrableId.Keyboard) != 0;
+        _noInputWarning.SetActive(!_mouseActive);
+        _isMainScreen = (int)(_currentRoom.Display.Equipment & Transferrable.ETransferrableId.Floppy) != 0
+            && !IsSwitchedOff;
+
+        _mainScreen.SetActive(_isMainScreen);
+        _enterFloppyScreen.SetActive(!_isMainScreen);
+        _uiRoot.gameObject.SetActive(!IsSwitchedOff);
     }
 
     private void DisplayEquipmentChangedHandler(Display display)
     {
-        var floppyReady = (int)(display.Equipment & Transferrable.ETransferrableId.Floppy) != 0;
-        if (floppyReady)
+        _floppyInserted = (int)(display.Equipment & Transferrable.ETransferrableId.Floppy) != 0;
+        if (!_isTurningOn && !_isMainScreen && _floppyInserted && !IsSwitchedOff)
             StartCoroutine(LoadProgramCoroutine());
 
         if (!_mouseActive)
@@ -102,5 +106,44 @@ public class InterfaceControllerWithUI : InterfaceController
         
         if (_mouseActive && _currentRoom.NextRoom != null)
             _currentRoom.NextRoom.LevelManager.RunGameplay();
+    }
+
+    private bool _isTurningOn;
+    
+    private IEnumerator TurnOn()
+    {
+        _isTurningOn = true;
+        _loadingScreen.SetActive(true);
+        yield return new WaitForSeconds(_loadTimeSec);
+
+        _isTurningOn = false;
+        if (_floppyInserted)
+        {
+            StartCoroutine(LoadProgramCoroutine());
+            yield break;
+        }
+        
+        _loadingScreen.SetActive(false);
+        _enterFloppyScreen.SetActive(true);
+    }
+
+    public override void SetVisibleStatus(bool isSwitchedOn)
+    {
+        if (!isSwitchedOn)
+        {
+            var a = 0;
+            a++;
+        }
+
+        IsSwitchedOff = !isSwitchedOn;
+        
+        _mainScreen.SetActive(false);
+        _enterFloppyScreen.SetActive(false);
+        _uiRoot.gameObject.SetActive(isSwitchedOn);
+
+        if (isSwitchedOn)
+            StartCoroutine(TurnOn());
+
+        base.SetVisibleStatus(isSwitchedOn);
     }
 }

@@ -63,9 +63,8 @@ public class Room : MonoBehaviour
     private void StateChangedAction(Turnable.ETurnableState obj)
     {
         _isDirty = true;
-
-        ComputerView.SetTurnedOnStatus(PowerIsOn);
-        // LevelManager.SetComputerTurnOnStatus(PowerIsOn);
+        
+        NextRoom.LevelManager.SetComputerTurnOnStatus(PowerIsOn);
 
         if (!PowerIsOn)
         {
@@ -80,7 +79,6 @@ public class Room : MonoBehaviour
 
         var scene = SceneManager.GetSceneByName(gameObject.name);
         SceneManager.SetActiveScene(scene);
-
 
         if (on)
             LevelManager.Activate();

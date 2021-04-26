@@ -36,7 +36,11 @@ public class ComputerView : MonoBehaviour, IRoomie
     public void SetTurnedOnStatus(bool turnedOn)
     {
         IsSwitchedOn = turnedOn;
+        InterfaceController.SetVisibleStatus(turnedOn);
         ShowUI(false);
+        
+        if (!turnedOn)
+            SwitchCamera(InterfaceController.UICamera);
     }
 
     public void ShowUI(bool activateInput = true)

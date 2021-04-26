@@ -12,13 +12,15 @@ public class InterfaceController : MonoBehaviour
 
     [SerializeField] private Camera _uiCamera = default;
     [SerializeField] private RectTransform _cursor = default;
-    [SerializeField] private RectTransform _uiRoot = default;
+    [SerializeField] protected RectTransform _uiRoot = default;
     [SerializeField] protected bool _mouseActive = true;
     [SerializeField] private UIInteractableElement[] _interactables = default;
 
     protected virtual bool InputActive => _mouseActive;
     
     public Camera UICamera => _uiCamera;
+    
+    public bool IsSwitchedOff { get; protected set; }
 
     private float _width;
     private float _height;
@@ -61,9 +63,8 @@ public class InterfaceController : MonoBehaviour
         enabled = false;
     }
 
-    public void SetVisibleStatus(bool isTurnedOn)
+    public virtual void SetVisibleStatus(bool isSwitchedOn)
     {
-        _uiRoot.gameObject.SetActive(isTurnedOn);
     }
 
     public void RegisterUIElements(IEnumerable<UIInteractableElement> elements)
