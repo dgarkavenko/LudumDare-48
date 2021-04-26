@@ -75,21 +75,24 @@ public class LevelManager : MonoBehaviour, IRoomie
                 Computer.HandleEnter();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!GameManager.Instance.AnyDisplays)
+            return;
+        
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetMouseButtonDown(1))
         {
-            if (!GameManager.Instance.AnyDisplays)
-                return;
-
-            if (CurrentState == ELevelState.Gameplay
-                && Computer != null
-                && Computer.InterfaceController != null)
+            GameManager.Instance.ZoomOutDisplay();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {   
+            if (CurrentState == ELevelState.Gameplay)
             {
                 ShowUI();
                 Room.Player.enabled = false;
             }
             else
             {
-                GameManager.Instance.ZoomOutDisplay();
+                RunGameplay();
             }
         }
     }

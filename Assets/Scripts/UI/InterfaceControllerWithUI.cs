@@ -56,18 +56,18 @@ public class InterfaceControllerWithUI : InterfaceController
     {
         base.Init(currentRoom);
 
-        var display = currentRoom.Display;
-        
-        if (currentRoom.Display.FullyEquiped)
+        _currentRoom = currentRoom;
+
+        if (_currentRoom.Display.FullyEquiped)
         {
             _mainScreen.SetActive(true);
         }
         else
         {
-            display.OnEquipmentChanged += DisplayEquipmentChangedHandler;
-            _mouseActive = (int)(display.Equipment & Transferrable.ETransferrableId.Keyboard) != 0;
+            _currentRoom.Display.OnEquipmentChanged += DisplayEquipmentChangedHandler;
+            _mouseActive = (int)(_currentRoom.Display.Equipment & Transferrable.ETransferrableId.Keyboard) != 0;
             _noInputWarning.SetActive(!_mouseActive);
-            _isMainScreen = (int)(display.Equipment & Transferrable.ETransferrableId.Floppy) != 0;
+            _isMainScreen = (int)(_currentRoom.Display.Equipment & Transferrable.ETransferrableId.Floppy) != 0;
             _mainScreen.SetActive(_isMainScreen);
             _enterFloppyScreen.SetActive(!_isMainScreen);
         }
@@ -100,5 +100,8 @@ public class InterfaceControllerWithUI : InterfaceController
         _loadingScreen.SetActive(false);
         _mainScreen.SetActive(true);
         _isMainScreen = true;
+        
+        if (_currentRoom.NextRoom != null)
+            _currentRoom.NextRoom.LevelManager.RunGameplay();
     }
 }
