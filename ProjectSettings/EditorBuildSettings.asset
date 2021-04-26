@@ -21,12 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Room_4_(Solving_conspiracy).unity
     guid: 210949c855f9ea44d83eb3bde8d9f4ad
   - enabled: 1
-    path: Assets/Scenes/Room_5_(Sending_the_disk).unity
-    guid: 88f2f1d3668770c4aaa2c4f835ee5487
-  - enabled: 1
-    path: Assets/Scenes/Room_6_(Office_at_night).unity
-    guid: 63fff18ce3e45834ea48d6b6fec94f3f
-  - enabled: 1
     path: Assets/Scenes/Room_7_(Final_scene).unity
     guid: a7c74e77fe53d324b9520213693bf923
   - enabled: 1

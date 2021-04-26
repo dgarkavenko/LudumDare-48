@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Loader : MonoBehaviour
 {
     public bool LoadOnStart = true;
-    public const int ScenesCount = 8;
+    public const int ScenesCount = 6;
     private int _loaded = 0;
     public Image Fill;
 
@@ -24,7 +24,7 @@ public class Loader : MonoBehaviour
             Launched = true;
             Load(_loaded + 1);
         }
-        
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
