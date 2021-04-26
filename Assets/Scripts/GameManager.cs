@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Player ActivePlayer => ActiveRoom.Player;
     public Room NextRoom => ActiveRoom.NextRoom;
     public Room PreviousRoom => ActiveRoom.PreviousRoom;
+    public AudioSource MetaSource;
 
     [SerializeField] private Room _activeRoom;
 
@@ -95,5 +96,15 @@ public class GameManager : MonoBehaviour
             ActiveRoom = ActiveRoom.PreviousRoom;
             ActiveRoom.MixerSnapshot.TransitionTo(2f);
         }
+    }
+
+    public void PlaySound(AudioClip clip, float volume = 1)
+    {
+        if(clip == null)
+            return;
+
+        MetaSource.clip = clip;
+        MetaSource.volume = volume;
+        MetaSource.Play();
     }
 }

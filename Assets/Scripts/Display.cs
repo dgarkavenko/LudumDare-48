@@ -6,7 +6,7 @@ using UnityEngine;
 public class Display : InteractableObject, IRoomie
 {
     public event Action<Display> OnEquipmentChanged;
-    
+
     public AnimationCurve ZoomInCurve;
     public AnimationCurve ZoomOutCurve;
 
@@ -17,6 +17,8 @@ public class Display : InteractableObject, IRoomie
     public Transform CameraDisappearPosition;
 
     public State CurrentState = State.Idle;
+    public AudioClip FloppySound;
+    public float Volume = 1;
 
     [SerializeField] private Transferrable.ETransferrableId _equipment;
     [SerializeField] private Transferrable.ETransferrableId _fullyEquipedFlag = (Transferrable.ETransferrableId.Floppy | Transferrable.ETransferrableId.Keyboard);
@@ -38,7 +40,7 @@ public class Display : InteractableObject, IRoomie
         {
             if (value == _equipment)
                 return;
-            
+
             _equipment = value;
             OnEquipmentChanged?.Invoke(this);
         }
@@ -196,7 +198,10 @@ public class Display : InteractableObject, IRoomie
     {
         if (requiredItem == null)
             return;
-        
+
+        if (requiredItem.Id == Transferrable.ETransferrableId.Floppy)
+            GameManager.Instance.PlaySound(FloppySound,1);
+
         Equipment |= requiredItem.Id;
 
         for (int i = 0; i < EquipmentPositions.Length; i++)
