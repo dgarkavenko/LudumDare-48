@@ -129,6 +129,9 @@ MonoBehaviour:
   _loadingScreen: {fileID: 7012867025057891549}
   _mainScreen: {fileID: 1964628182463470768}
   _noInputWarning: {fileID: 3509342934565600141}
+  _loadTimeSec: 5
+  _loadButton: {fileID: 5326672857567514626}
+  _saveButton: {fileID: 3106149033000880546}
 --- !u!1 &210587813963809100
 GameObject:
   m_ObjectHideFlags: 0

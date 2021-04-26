@@ -5,7 +5,7 @@ using UnityEngine;
 public class InterfaceController : MonoBehaviour
 {
     public event Action OnResumeClicked;
-    
+
     [SerializeField] private UIInteractableButton _resumeButton;
     
     public static InterfaceController Current { get; private set; }

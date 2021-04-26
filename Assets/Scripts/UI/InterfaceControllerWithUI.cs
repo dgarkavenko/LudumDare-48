@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class InterfaceControllerWithUI : InterfaceController
@@ -8,20 +9,47 @@ public class InterfaceControllerWithUI : InterfaceController
     [SerializeField] private GameObject _loadingScreen = default;
     [SerializeField] private GameObject _mainScreen = default;
     [SerializeField] private GameObject _noInputWarning = default;
+    [SerializeField] private int _loadTimeSec = 5;
 
     private bool _isMainScreen;
 
     protected override bool InputActive => base.InputActive && _isMainScreen;
+    private Room _currentRoom;
+    
 
-    // [SerializeField] private UIInteractableButton _loadButton = default;
-    // [SerializeField] private UIInteractableButton _saveButton = default;
+    [SerializeField] private UIInteractableButton _loadButton = default;
+    [SerializeField] private UIInteractableButton _saveButton = default;
 
     protected override void Start()
     {
-        // _loadButton.OnButtonClicked += LoadButtonClickedHandler;
+        _loadButton.OnButtonClicked += LoadButtonClickedHandler;
         // _saveButton.OnButtonClicked += SaveButtonClickedHandler;
         
         base.Start();
+    }
+
+    private void LoadButtonClickedHandler()
+    {
+        _loadingScreen.SetActive(true);
+        _mainScreen.SetActive(false);
+        _isMainScreen = false;
+        
+        WaitForReload();
+    }
+
+    private async void WaitForReload()
+    {
+        var loadStartTime = Time.time;
+        
+        await _currentRoom.Reload();
+
+        var loadTime = Time.time - loadStartTime;
+        if (loadTime < 5)
+            await Task.Delay((int)((loadTime - _loadTimeSec) * 1000f));
+        
+        _loadingScreen.SetActive(false);
+        _mainScreen.SetActive(true);
+        _isMainScreen = true;
     }
 
     public override void Init(Room currentRoom)
@@ -67,7 +95,7 @@ public class InterfaceControllerWithUI : InterfaceController
         _enterFloppyScreen.SetActive(false);
         _loadingScreen.SetActive(true);
         
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(_loadTimeSec);
         
         _loadingScreen.SetActive(false);
         _mainScreen.SetActive(true);
