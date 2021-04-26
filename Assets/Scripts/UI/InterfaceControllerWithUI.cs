@@ -71,5 +71,6 @@ public class InterfaceControllerWithUI : InterfaceController
         
         _loadingScreen.SetActive(false);
         _mainScreen.SetActive(true);
+        _isMainScreen = true;
     }
 }
