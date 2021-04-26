@@ -253,6 +253,7 @@ public class PostEffectMask : MonoBehaviour, ISerializationCallbackReceiver {
         }
     }
 
+    [ImageEffectOpaque]
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
         // blend processed(source) with the unprocessed using it's alpha channel (the mask)
         var srcFactor = !invert ? BlendMode.DstAlpha : BlendMode.OneMinusDstAlpha;
