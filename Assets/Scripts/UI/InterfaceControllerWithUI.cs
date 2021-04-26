@@ -43,7 +43,7 @@ public class InterfaceControllerWithUI : InterfaceController
         await _currentRoom.Reload();
 
         var loadTime = Time.time - loadStartTime;
-        if (loadTime < 5)
+        if (loadTime < _loadTimeSec)
             await Task.Delay((int)((loadTime - _loadTimeSec) * 1000f));
         
         _loadingScreen.SetActive(false);

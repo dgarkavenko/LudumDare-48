@@ -10,13 +10,12 @@ public class ComputerView : MonoBehaviour, IRoomie
     private Camera Camera => ParentRoom.NextRoom.Camera;
     [SerializeField] private int _resolutionWidth = 1024;
     [SerializeField] private int _resolutionHeight = 768;
-    [SerializeField] private bool _isSwitchedOn = true;
     public InterfaceController InterfaceController = default;
 
     private Renderer _renderer;
     private RenderTexture _renderTexture;
 
-    public bool IsSwitchedOn => _isSwitchedOn;
+    public bool IsSwitchedOn { get; private set; }
 
     private void Start()
     {
@@ -36,19 +35,13 @@ public class ComputerView : MonoBehaviour, IRoomie
 
     public void SetTurnedOnStatus(bool turnedOn)
     {
-        _isSwitchedOn = turnedOn;
-        ShowUI(false);
-    }
-
-    public void TurnOff()
-    {
-        _isSwitchedOn = false;
+        IsSwitchedOn = turnedOn;
         ShowUI(false);
     }
 
     public void ShowUI(bool activateInput = true)
     {
-        if (!_isSwitchedOn)
+        if (!IsSwitchedOn)
             return;
 
         if (InterfaceController != null)
@@ -72,7 +65,7 @@ public class ComputerView : MonoBehaviour, IRoomie
     
     public void ShowGameplay()
     {
-        if (!_isSwitchedOn)
+        if (!IsSwitchedOn)
             return;
 
         SwitchCamera(Camera);
@@ -90,5 +83,20 @@ public class ComputerView : MonoBehaviour, IRoomie
         activeCamera.targetTexture = _renderTexture;
     }
 
-    public Room ParentRoom { get; set; }
+    private void Init()
+    {
+        IsSwitchedOn = ParentRoom.PowerIsOn;
+    }
+    
+    private Room parentRoom;
+    
+    public Room ParentRoom
+    {
+        get => parentRoom;
+        set
+        {
+            parentRoom = value;
+            Init();
+        }
+    }
 }
