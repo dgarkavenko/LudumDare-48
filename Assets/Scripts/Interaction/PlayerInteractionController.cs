@@ -30,7 +30,9 @@ public class PlayerInteractionController : MonoBehaviour
         {
             _interactable = value;
             ActivePlayer.Outliner.Selection = _interactable;
-            ActivePlayer.Outliner.CanInteract = _interactable && _interactable.CanInteract(ActivePlayer);
+
+            if (_interactable)
+                ActivePlayer.Outliner.CanInteract = _interactable.CanInteract(ActivePlayer);
         }
     }
 
@@ -47,9 +49,12 @@ public class PlayerInteractionController : MonoBehaviour
 
         Interactable = hit ? _hit.transform.GetComponent<InteractableObject>() : null;
 
-        if (Interactable && (Input.GetMouseButtonDown(0)
-            || Input.GetKeyDown(KeyCode.E)))
-            Interact();
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)))
+            if (Interactable)
+                Interact();
+            else
+                ActivePlayer.DropBurden();
+
     }
 
     private void Interact()

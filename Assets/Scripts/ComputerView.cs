@@ -57,7 +57,7 @@ public class ComputerView : MonoBehaviour, IRoomie
     {
         if (!_isSwitchedOn)
             return;
-        
+
         if (!InterfaceController.HandleEnter())
             return;
 
