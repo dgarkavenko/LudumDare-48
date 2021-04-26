@@ -15,7 +15,6 @@ public class InterfaceControllerWithUI : InterfaceController
 
     protected override bool InputActive => base.InputActive && _isMainScreen;
     private Room _currentRoom;
-    
 
     [SerializeField] private UIInteractableButton _loadButton = default;
     [SerializeField] private UIInteractableButton _saveButton = default;
@@ -101,7 +100,7 @@ public class InterfaceControllerWithUI : InterfaceController
         _mainScreen.SetActive(true);
         _isMainScreen = true;
         
-        if (_currentRoom.NextRoom != null)
+        if (_mouseActive && _currentRoom.NextRoom != null)
             _currentRoom.NextRoom.LevelManager.RunGameplay();
     }
 }
