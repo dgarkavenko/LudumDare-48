@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Console UI5
       objectReference: {fileID: 0}
+    - target: {fileID: 8638878125186915821, guid: aeb6cc75820671e48a35cfc36bb9ae6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb6cc75820671e48a35cfc36bb9ae6f, type: 3}
 --- !u!4 &805600862539166189 stripped
@@ -486,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 954915190126570263, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1121260591268574340, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
@@ -538,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850188407273754121, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2067656200873249438, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -548,21 +552,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIFinal
       objectReference: {fileID: 0}
+    - target: {fileID: 3515200320232985398, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4049638870569005469, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223205747780156654, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5461625039269939809, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5855795327880850383, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7023706654026760808, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7096067646202144656, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7447449000263786171, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_Enabled
@@ -571,6 +587,10 @@ PrefabInstance:
     - target: {fileID: 8154446466824371279, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785369449494894235, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
@@ -724,6 +744,10 @@ PrefabInstance:
     - target: {fileID: 8638878125186915821, guid: aeb6cc75820671e48a35cfc36bb9ae6f, type: 3}
       propertyPath: m_Name
       value: Console UI6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638878125186915821, guid: aeb6cc75820671e48a35cfc36bb9ae6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb6cc75820671e48a35cfc36bb9ae6f, type: 3}

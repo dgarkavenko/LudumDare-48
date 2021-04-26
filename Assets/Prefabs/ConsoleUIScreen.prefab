@@ -523,10 +523,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ef1f73e29142945b6b9f4d729ac463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _resumeButton: {fileID: 0}
   _uiCamera: {fileID: 5487081034786304109}
   _cursor: {fileID: 7231280751883391978}
   _uiRoot: {fileID: 3278948995280688691}
   _mouseActive: 1
+  _interactables: []
   _currentState: 1
   _installedLibraries: 0
   _console: {fileID: 561530444}
@@ -627,7 +629,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5.4
-  m_Depth: 0
+  m_Depth: -10
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 32
