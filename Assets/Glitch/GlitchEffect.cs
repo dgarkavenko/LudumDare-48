@@ -31,7 +31,7 @@ public class GlitchEffect : MonoBehaviour
 	}
 
 	// Called by camera to apply image effect
-	//[ImageEffectOpaque]
+	[ImageEffectOpaque]
 	void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
 		_material.SetFloat("_Intensity", intensity);
