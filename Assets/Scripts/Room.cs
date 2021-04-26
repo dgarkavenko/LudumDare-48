@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class Room : MonoBehaviour
 {
@@ -72,6 +73,10 @@ public class Room : MonoBehaviour
     public void Focus(bool on)
     {
         Player.enabled = on;
+
+        var scene = SceneManager.GetSceneByName(gameObject.name);
+        SceneManager.SetActiveScene(scene);
+
 
         if (on)
             LevelManager.Activate();
