@@ -129,12 +129,6 @@ public class InterfaceControllerWithUI : InterfaceController
 
     public override void SetVisibleStatus(bool isSwitchedOn)
     {
-        if (!isSwitchedOn)
-        {
-            var a = 0;
-            a++;
-        }
-
         IsSwitchedOff = !isSwitchedOn;
         
         _mainScreen.SetActive(false);
