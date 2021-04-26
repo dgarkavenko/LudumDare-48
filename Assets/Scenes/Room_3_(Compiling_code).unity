@@ -4896,50 +4896,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1474085285}
     m_Modifications:
-    - target: {fileID: 540209836549769932, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.363
-      objectReference: {fileID: 0}
-    - target: {fileID: 540209836549769932, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.828
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.082
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.644
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6912778
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.6912779
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.14877826
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.14877824
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 698426371164582009, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 24.292
-      objectReference: {fileID: 0}
-    - target: {fileID: 2793569480660594850, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4655058524981058261, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4987,10 +4943,6 @@ PrefabInstance:
     - target: {fileID: 7770010564884388105, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
       propertyPath: m_Name
       value: Corporation_room_props
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162042783405296476, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba00b99e603cfb34c82ec4216e9657cb, type: 3}
