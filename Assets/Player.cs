@@ -14,11 +14,13 @@ public class Player : MonoBehaviour, IRoomie
     public Vector3 HandsPosition => _fpc.playerCamera.transform.position + _fpc.playerCamera.transform.rotation * HandsOffset;
     public Camera Camera => _fpc.playerCamera;
     public SelectionOutlineController Outliner;
+    public AudioListener AudioListener;
 
     public void OnValidate()
     {
         _fpc = GetComponent<FirstPersonController>();
         Outliner = _fpc.playerCamera.GetComponent<SelectionOutlineController>();
+        AudioListener = _fpc.playerCamera.GetComponent<AudioListener>();
     }
 
     public void LateUpdate()

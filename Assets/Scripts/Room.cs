@@ -19,7 +19,6 @@ public class Room : MonoBehaviour
     public float TimeSpentInRoom;
     private int _upcomingEventIndex = 0;
     public RoomEvent[] RoomEvents;
-
     public Turnable[] PowerRequirement;
 
     private bool _isDirty = true;
@@ -110,8 +109,10 @@ public class Room : MonoBehaviour
 
         public void Invoke()
         {
-            Turnable.State = TargetState;
-            Source.Play();
+            if (Turnable)
+                Turnable.State = TargetState;
+            if (Source)
+                Source.Play();
         }
     }
 }
