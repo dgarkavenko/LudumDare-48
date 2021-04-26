@@ -385,7 +385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resolutionWidth: 1024
   _resolutionHeight: 768
-  _isSwitchedOn: 1
   InterfaceController: {fileID: 6717241990596248288}
 --- !u!1 &65085536
 GameObject:
@@ -3343,7 +3342,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resolutionWidth: 1024
   _resolutionHeight: 768
-  _isSwitchedOn: 1
   InterfaceController: {fileID: 6717241990596248286}
 --- !u!23 &1238877218
 MeshRenderer:
@@ -3406,7 +3404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2077800855}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 205.279, z: 0}
 --- !u!1 &1240161045
 GameObject:
@@ -3597,7 +3595,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resolutionWidth: 1024
   _resolutionHeight: 768
-  _isSwitchedOn: 1
   InterfaceController: {fileID: 6717241990596248289}
 --- !u!1 &1412206817
 GameObject:
@@ -5392,7 +5389,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resolutionWidth: 1024
   _resolutionHeight: 768
-  _isSwitchedOn: 1
   InterfaceController: {fileID: 6717241990596248287}
 --- !u!64 &1908847544
 MeshCollider:
@@ -6103,10 +6099,10 @@ Transform:
   - {fileID: 1430314555}
   - {fileID: 527292358}
   - {fileID: 1845984196}
-  - {fileID: 698529338}
   - {fileID: 1238877220}
-  - {fileID: 1176132589}
+  - {fileID: 698529338}
   - {fileID: 543450652753713622}
+  - {fileID: 1176132589}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6164,6 +6160,10 @@ PrefabInstance:
     - target: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Depth
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4459864851310106427, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_Enabled
@@ -6358,7 +6358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resolutionWidth: 1024
   _resolutionHeight: 768
-  _isSwitchedOn: 1
   InterfaceController: {fileID: 6717241990596248285}
 --- !u!114 &2125392124
 MonoBehaviour:
@@ -8682,7 +8681,7 @@ Transform:
   - {fileID: 7418226848279727069}
   - {fileID: 3332686427185446482}
   m_Father: {fileID: 2077800855}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &555493768777729345
 MeshFilter:
