@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
 
 public class Display : InteractableObject, IRoomie
 {
+    public event Action<Display> OnEquipmentChanged;
+    
     public AnimationCurve ZoomInCurve;
     public AnimationCurve ZoomOutCurve;
 
@@ -199,6 +202,7 @@ public class Display : InteractableObject, IRoomie
         }
 
         requiredItem.transform.SetPositionAndRotation(transform.position, transform.rotation);
+        OnEquipmentChanged?.Invoke(this);
     }
 
     public Room ParentRoom { get; set; }

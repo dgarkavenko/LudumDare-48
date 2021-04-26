@@ -16,13 +16,23 @@ public class ComputerView : MonoBehaviour, IRoomie
     private Renderer _renderer;
     private RenderTexture _renderTexture;
 
+    public bool IsSwitchedOn => _isSwitchedOn;
+
     private void Start()
     {
         _renderer = GetComponent<Renderer>();
         _renderTexture = new RenderTexture(_resolutionWidth, _resolutionHeight, 24);
         _renderer.material.mainTexture = _renderTexture;
+        
+        InterfaceController.OnResumeClicked += ResumeHandler;
+        InterfaceController.Init(ParentRoom);
 
         ShowUI(false);
+    }
+
+    private void ResumeHandler()
+    {
+        ShowGameplay();
     }
 
     public void SetTurnedOnStatus(bool turnedOn)
@@ -50,15 +60,20 @@ public class ComputerView : MonoBehaviour, IRoomie
             OnUIShown?.Invoke();
         }
         else
-            HandleEnter();
+            ShowGameplay();
     }
 
     public void HandleEnter()
     {
-        if (!_isSwitchedOn)
+        if (!InterfaceController.HandleEnter())
             return;
         
-        if (!InterfaceController.HandleEnter())
+        ShowGameplay();
+    }
+    
+    public void ShowGameplay()
+    {
+        if (!_isSwitchedOn)
             return;
 
         SwitchCamera(Camera);

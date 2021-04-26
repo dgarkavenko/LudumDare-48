@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour, IRoomie
 
     [SerializeField] private ELevelState _currentState = ELevelState.UI;
 
+    public ELevelState CurrentState => _currentState;
+
     private void Start()
     {
         if (Computer != null)
@@ -64,14 +66,15 @@ public class LevelManager : MonoBehaviour, IRoomie
     public void RunGameplay()
     {
         if (Computer != null)
-            Computer.HandleEnter();
+            Computer.ShowGameplay();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            RunGameplay();
+            if (Computer != null)
+                Computer.HandleEnter();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

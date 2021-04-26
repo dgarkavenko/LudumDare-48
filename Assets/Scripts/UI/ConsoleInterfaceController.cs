@@ -230,7 +230,7 @@ Runtime Environment
                 text += ".";
 
             await _console.ChangeLastLine(text);
-            dotsCount = (dotsCount + 1) % 3;
+            dotsCount = (dotsCount + 1) % 4;
         }
     }
 

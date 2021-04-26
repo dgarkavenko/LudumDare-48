@@ -1,14 +1,19 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InterfaceController : MonoBehaviour
 {
+    public event Action OnResumeClicked;
+    
+    [SerializeField] private UIInteractableButton _resumeButton;
+    
     public static InterfaceController Current { get; private set; }
 
     [SerializeField] private Camera _uiCamera = default;
     [SerializeField] private RectTransform _cursor = default;
     [SerializeField] private RectTransform _uiRoot = default;
-    [SerializeField] private bool _mouseActive = true;
+    [SerializeField] protected bool _mouseActive = true;
     [SerializeField] private UIInteractableElement[] _interactables = default;
 
     public Camera UICamera => _uiCamera;
@@ -21,9 +26,16 @@ public class InterfaceController : MonoBehaviour
         _width = _uiRoot.sizeDelta.x;
         _height = _uiRoot.sizeDelta.y;
 
-        _cursor.gameObject.SetActive(_mouseActive);
-        if (_mouseActive)
+        if (_cursor != null)
             _cursor.SetAsLastSibling();
+        
+        if (_resumeButton != null)
+            _resumeButton.OnButtonClicked += ResumeButtonClickedHandler;
+    }
+
+    public virtual void Init(Room currentRoom)
+    {
+        
     }
 
     private void OnEnable()
@@ -100,5 +112,10 @@ public class InterfaceController : MonoBehaviour
     public virtual bool HandleEnter()
     {
         return true;
+    }
+    
+    private void ResumeButtonClickedHandler()
+    {
+        OnResumeClicked?.Invoke();
     }
 }
