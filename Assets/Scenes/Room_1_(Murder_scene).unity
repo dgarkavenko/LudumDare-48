@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.735849, g: 0.66648364, b: 0.48940903, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.03
+  m_FogDensity: 0.07
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.08537992, g: 0.082792655, b: 0.0698563, a: 1}
@@ -231,6 +231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8003160422554309692, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d76791883ef614547bdf358d1f052d05, type: 2}
     - target: {fileID: 919132149155446097, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
       propertyPath: m_Name
       value: Detective_room
@@ -682,11 +686,6 @@ GameObject:
 --- !u!1 &343107913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1042130129260228007, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
-  m_PrefabInstance: {fileID: 343107843}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &343107914 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3973107660126017756, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
   m_PrefabInstance: {fileID: 343107843}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &343107915
@@ -1319,20 +1318,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1059980002066054725, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
---- !u!64 &343107960
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343107914}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1562275218897716241, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
 --- !u!1 &441639293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,6 +1988,10 @@ PrefabInstance:
     - target: {fileID: 1394825266164386318, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777508673418114731, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
