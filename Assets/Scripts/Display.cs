@@ -107,7 +107,6 @@ public class Display : InteractableObject, IRoomie
             );
 
             CurrentState = State.UI;
-            Cursor.lockState = CursorLockMode.None;
 
             ControlNextRoom();
         }
@@ -133,7 +132,6 @@ public class Display : InteractableObject, IRoomie
     public IEnumerator ZoomOut()
     {
         CurrentState = State.ZoomingOut;
-        Cursor.lockState = CursorLockMode.Locked;
 
         GameManager.Instance.Ascend();
 
