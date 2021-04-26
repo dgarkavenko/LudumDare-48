@@ -22,8 +22,7 @@ public class ComputerView : MonoBehaviour, IRoomie
     {
         _renderer = GetComponent<Renderer>();
         _renderTexture = new RenderTexture(_resolutionWidth, _resolutionHeight, 24);
-        _renderer.material.mainTexture = _renderTexture;
-        
+        _renderer.material.SetTexture("_EmissionMap", _renderTexture);        
         InterfaceController.OnResumeClicked += ResumeHandler;
         InterfaceController.Init(ParentRoom);
 
