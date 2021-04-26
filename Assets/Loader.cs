@@ -31,10 +31,10 @@ public class Loader : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time < _startTime + 2)
+        if (Time.time < _startTime + 1)
             return;
 
-        if (Input.anyKeyDown && !Launched)
+        if ((Input.anyKeyDown || Time.time > _startTime + 5) && !Launched)
         {
             Launched = true;
             Load(_loaded + 1);
