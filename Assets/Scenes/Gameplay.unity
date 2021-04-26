@@ -68230,10 +68230,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1782336645}
     m_Modifications:
-    - target: {fileID: 4815002388014957282, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
-      propertyPath: FloppySound
-      value: 
-      objectReference: {fileID: 8300000, guid: 65416629da3c5404a81b09b148731d71, type: 3}
     - target: {fileID: 6115364467848370544, guid: 02eaee1286e989f4eb9d19366f6fc296, type: 3}
       propertyPath: m_Name
       value: old_pc (1)
