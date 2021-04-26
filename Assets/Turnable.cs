@@ -17,7 +17,8 @@ public class Turnable : InteractableObject
     public float TransitionTime;
     public Action<ETurnableState> StateChangedAction;
     private Collider[] _colliders;
-
+    public AudioClip Clip;
+    public float Volume;
 
     public override void OnValidate()
     {
@@ -58,7 +59,11 @@ public class Turnable : InteractableObject
     public override void Interact(Player player)
     {
         if (OnlyTurnsOn)
+        {
             State = ETurnableState.On;
+            if (Clip)
+                GameManager.Instance.PlaySound(Clip, Volume);
+        }
         else
             StartCoroutine(AnimateTurn());
         base.Interact(player);

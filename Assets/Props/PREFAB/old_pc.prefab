@@ -235,7 +235,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8b75533d0a431444da59896e67977b11, type: 2}
+  - {fileID: 2100000, guid: eb38d8069221f704597b36a0306a6c91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -433,6 +433,8 @@ MonoBehaviour:
   CameraTargetPosition: {fileID: 20360955}
   CameraDisappearPosition: {fileID: 179475342}
   CurrentState: 0
+  FloppySound: {fileID: 8300000, guid: 65416629da3c5404a81b09b148731d71, type: 3}
+  Volume: 1
   _equipment: 2
   _fullyEquipedFlag: 3
   EquipmentPositions:
