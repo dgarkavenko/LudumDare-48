@@ -67,7 +67,7 @@ public class ComputerView : MonoBehaviour, IRoomie
     {
         if (!InterfaceController.HandleEnter())
             return;
-        
+
         ShowGameplay();
     }
     

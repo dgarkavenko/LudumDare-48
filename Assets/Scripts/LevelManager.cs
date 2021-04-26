@@ -8,8 +8,6 @@ public class LevelManager : MonoBehaviour, IRoomie
 
     [SerializeField] private ELevelState _currentState = ELevelState.UI;
 
-    public ELevelState CurrentState => _currentState;
-
     private void Start()
     {
         if (Computer != null)
@@ -29,7 +27,7 @@ public class LevelManager : MonoBehaviour, IRoomie
 
         if (Computer != null)
         {
-            if (_currentState == ELevelState.UI)
+            if (CurrentState == ELevelState.UI)
                 Computer.ShowUI();
             else
                 RunGameplay();
@@ -53,7 +51,7 @@ public class LevelManager : MonoBehaviour, IRoomie
 
         if (status)
             _currentState = ELevelState.UI;
-        
+
         Computer.SetTurnedOnStatus(status);
     }
 
@@ -82,7 +80,7 @@ public class LevelManager : MonoBehaviour, IRoomie
             if (!GameManager.Instance.AnyDisplays)
                 return;
 
-            if (_currentState == ELevelState.Gameplay
+            if (CurrentState == ELevelState.Gameplay
                 && Computer != null
                 && Computer.InterfaceController != null)
             {
@@ -97,6 +95,8 @@ public class LevelManager : MonoBehaviour, IRoomie
     }
 
     public Room ParentRoom { get; set; }
+
+    public ELevelState CurrentState => _currentState;
 }
 
 public enum ELevelState

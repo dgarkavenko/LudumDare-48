@@ -10,7 +10,9 @@ public class InterfaceControllerWithUI : InterfaceController
     [SerializeField] private GameObject _noInputWarning = default;
 
     private bool _isMainScreen;
-    
+
+    protected override bool MouseActive => base.MouseActive && _isMainScreen;
+
     // [SerializeField] private UIInteractableButton _loadButton = default;
     // [SerializeField] private UIInteractableButton _saveButton = default;
 
@@ -35,30 +37,29 @@ public class InterfaceControllerWithUI : InterfaceController
         else
         {
             display.OnEquipmentChanged += DisplayEquipmentChangedHandler;
-            _mouseActive = (int)(display.Equipment | Transferrable.ETransferrableId.Keyboard) != 0;
-            _noInputWarning.SetActive(_mouseActive);
-            _isMainScreen = (int)(display.Equipment | Transferrable.ETransferrableId.Floppy) != 0;
+            _mouseActive = (int)(display.Equipment & Transferrable.ETransferrableId.Keyboard) != 0;
+            _noInputWarning.SetActive(!_mouseActive);
+            _isMainScreen = (int)(display.Equipment & Transferrable.ETransferrableId.Floppy) != 0;
             _mainScreen.SetActive(_isMainScreen);
-            _enterFloppyScreen.SetActive(_isMainScreen);
+            _enterFloppyScreen.SetActive(!_isMainScreen);
         }
     }
 
     private void DisplayEquipmentChangedHandler(Display display)
     {
-        var floppyReady = (int)(display.Equipment | Transferrable.ETransferrableId.Floppy) != 0;
+        var floppyReady = (int)(display.Equipment & Transferrable.ETransferrableId.Floppy) != 0;
         if (floppyReady)
             StartCoroutine(LoadProgramCoroutine());
 
         if (!_mouseActive)
         {
-            var inputReady = (int)(display.Equipment | Transferrable.ETransferrableId.Keyboard) != 0;
+            var inputReady = (int)(display.Equipment & Transferrable.ETransferrableId.Keyboard) != 0;
             if (inputReady)
             {
                 _mouseActive = true;
                 _noInputWarning.SetActive(false);
             }
         }
-        
     }
 
     private IEnumerator LoadProgramCoroutine()
@@ -66,7 +67,7 @@ public class InterfaceControllerWithUI : InterfaceController
         _enterFloppyScreen.SetActive(false);
         _loadingScreen.SetActive(true);
         
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         
         _loadingScreen.SetActive(false);
         _mainScreen.SetActive(true);

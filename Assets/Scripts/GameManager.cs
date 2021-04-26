@@ -81,6 +81,11 @@ public class GameManager : MonoBehaviour
     public void Descend()
     {
         ActiveRoom = ActiveRoom.NextRoom;
+
+        if (ActiveRoom.PreviousRoom != null)
+            ActiveRoom.PreviousRoom.Player.AudioListener.enabled = false;
+
+        ActiveRoom.Player.AudioListener.enabled = true;
         ActiveRoom.MixerSnapshot.TransitionTo(2f);
     }
 

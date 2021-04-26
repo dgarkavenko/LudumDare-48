@@ -17,6 +17,8 @@ public class Room : MonoBehaviour
     public Room NextRoom;
     public AudioMixerSnapshot MixerSnapshot;
 
+    public bool GameplayActivated;
+
 
     public float TimeSpentInRoom;
     private int _upcomingEventIndex = 0;
@@ -87,7 +89,7 @@ public class Room : MonoBehaviour
 
     public void Update()
     {
-        if (this == GameManager.Instance.ActiveRoom)
+        if (this == GameManager.Instance.ActiveRoom && LevelManager.CurrentState == ELevelState.Gameplay)
             TimeSpentInRoom += Time.deltaTime;
 
         for (int i = _upcomingEventIndex; i < RoomEvents.Length; i++)

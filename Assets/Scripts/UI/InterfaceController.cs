@@ -16,6 +16,8 @@ public class InterfaceController : MonoBehaviour
     [SerializeField] protected bool _mouseActive = true;
     [SerializeField] private UIInteractableElement[] _interactables = default;
 
+    protected virtual bool MouseActive => _mouseActive;
+    
     public Camera UICamera => _uiCamera;
 
     private float _width;
@@ -83,7 +85,7 @@ public class InterfaceController : MonoBehaviour
 
     private void MoveMouse()
     {
-        if (!_mouseActive)
+        if (!MouseActive)
             return;
         
         var mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4475555869324449126}
   - component: {fileID: 5876709879021264682}
   - component: {fileID: 2760117604916212314}
-  - component: {fileID: 7447449000263786171}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -129,31 +128,7 @@ MonoBehaviour:
   _enterFloppyScreen: {fileID: 4559333637271305838}
   _loadingScreen: {fileID: 7012867025057891549}
   _mainScreen: {fileID: 1964628182463470768}
-  _noInputWarning: {fileID: 0}
---- !u!114 &7447449000263786171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77465737450533663}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454fc9ad5a4022d4b893091f1bb1256b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _resumeButton: {fileID: 5352611066116628696}
-  _uiCamera: {fileID: 1362193642001506153}
-  _cursor: {fileID: 4223205747780156654}
-  _uiRoot: {fileID: 8304732796915005751}
-  _mouseActive: 1
-  _interactables:
-  - {fileID: 8432421997366329597}
-  - {fileID: 7971435908689109709}
-  - {fileID: 112584411235253091}
-  - {fileID: 3106149033000880546}
-  - {fileID: 5326672857567514626}
-  - {fileID: 5352611066116628696}
+  _noInputWarning: {fileID: 3509342934565600141}
 --- !u!1 &1300511241923995904
 GameObject:
   m_ObjectHideFlags: 0

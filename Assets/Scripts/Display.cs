@@ -34,7 +34,14 @@ public class Display : InteractableObject, IRoomie
     public Transferrable.ETransferrableId Equipment
     {
         get => _equipment;
-        set => _equipment = value;
+        set
+        {
+            if (value == _equipment)
+                return;
+            
+            _equipment = value;
+            OnEquipmentChanged?.Invoke(this);
+        }
     }
 
     public bool FullyEquiped => Equipment == _fullyEquipedFlag;
@@ -202,7 +209,6 @@ public class Display : InteractableObject, IRoomie
         }
 
         requiredItem.transform.SetPositionAndRotation(transform.position, transform.rotation);
-        OnEquipmentChanged?.Invoke(this);
     }
 
     public Room ParentRoom { get; set; }

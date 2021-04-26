@@ -488,7 +488,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: scratched_metal
-    second: {fileID: 2100000, guid: e3e1fe501d7671846b9587cacdf93f78, type: 2}
+    second: {fileID: 2100000, guid: e649ba584efcfc34facd836b789c55ab, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
