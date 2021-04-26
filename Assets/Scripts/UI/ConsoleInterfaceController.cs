@@ -230,14 +230,14 @@ Runtime Environment
                 text += ".";
 
             await _console.ChangeLastLine(text);
-            dotsCount = (dotsCount + 1) % 4;
+            dotsCount = (dotsCount + 1) % 3;
         }
     }
 
     private async Task LoadDefaultText(EConsoleState currentState)
     {
         await _console.ShowText(_consoleHeader);
-        await _console.ShowSingleLine(_importFiles);
+        await _console.ShowSingleLine(string.Empty);
 
         foreach (var packagePair in _packages)
         {

@@ -35,7 +35,7 @@ public class LoadingScreen : MonoBehaviour
                 text += ".";
 
             _text.text = text;
-            dotsCount = (dotsCount + 1) % 4;
+            dotsCount = (dotsCount + 1) % 5;
 
             yield return _wait;
         }
