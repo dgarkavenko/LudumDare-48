@@ -16,7 +16,7 @@ public class InterfaceController : MonoBehaviour
     [SerializeField] protected bool _mouseActive = true;
     [SerializeField] private UIInteractableElement[] _interactables = default;
 
-    protected virtual bool MouseActive => _mouseActive;
+    protected virtual bool InputActive => _mouseActive;
     
     public Camera UICamera => _uiCamera;
 
@@ -85,7 +85,7 @@ public class InterfaceController : MonoBehaviour
 
     private void MoveMouse()
     {
-        if (!MouseActive)
+        if (!InputActive)
             return;
         
         var mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
@@ -113,7 +113,7 @@ public class InterfaceController : MonoBehaviour
 
     public virtual bool HandleEnter()
     {
-        return true;
+        return InputActive;
     }
     
     private void ResumeButtonClickedHandler()

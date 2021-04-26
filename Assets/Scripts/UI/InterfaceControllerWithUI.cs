@@ -11,7 +11,7 @@ public class InterfaceControllerWithUI : InterfaceController
 
     private bool _isMainScreen;
 
-    protected override bool MouseActive => base.MouseActive && _isMainScreen;
+    protected override bool InputActive => base.InputActive && _isMainScreen;
 
     // [SerializeField] private UIInteractableButton _loadButton = default;
     // [SerializeField] private UIInteractableButton _saveButton = default;
