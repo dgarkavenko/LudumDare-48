@@ -92,6 +92,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Carpet
+    second: {fileID: 2100000, guid: 59d32b3c387d55347b718cc88896a549, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Coat
     second: {fileID: 2100000, guid: 5f3e9d02100add64298f50dd1d65fb9f, type: 2}
   - first:
@@ -382,6 +387,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Note_cover
+    second: {fileID: 2100000, guid: ce607835c18d87c4cb2c6b4001297d5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Screen
     second: {fileID: 2100000, guid: ac8aa7f6aad92d64ea808a3dd33b3258, type: 2}
   - first:
@@ -402,6 +412,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Wood_Board
+    second: {fileID: 2100000, guid: 42bf8b9101c34f9419775ea0f7acf16d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: bai
     second: {fileID: 2100000, guid: 5bef19909fc0e484cbe574e0c8b611b5, type: 2}
   - first:
@@ -417,6 +432,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: construction_plaster
+    second: {fileID: 2100000, guid: b7e1f5bd99b73864f8a63fa1cc63c897, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: default
     second: {fileID: 2100000, guid: 41628eb4bc8beed4a86bdd554d8875cc, type: 2}
   - first:
@@ -424,6 +444,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: default02
     second: {fileID: 2100000, guid: 498eaeee2770e2c42a2980c7e4814712, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: framed_wallpaper
+    second: {fileID: 2100000, guid: 558abbc5a6dd1914f8dfadbd87824e44, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -447,6 +472,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: old_fabric_wall_panel
+    second: {fileID: 2100000, guid: 2874624e865cfb14aa7b65eb27052b5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: plastic_h2
     second: {fileID: 2100000, guid: 8c5f014a2c60a4d4eaadf2c23d39d023, type: 2}
   - first:
@@ -454,6 +484,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: red
     second: {fileID: 2100000, guid: 7775956bc02f11e47b0efa6310809276, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: scratched_metal
+    second: {fileID: 2100000, guid: e3e1fe501d7671846b9587cacdf93f78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: scratched_plastic_orange
+    second: {fileID: 2100000, guid: 9afa7ae0fd7a82c4bad7096cda3b2d69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: scratched_plastic_white
+    second: {fileID: 2100000, guid: 1586b83c36aa11e47983a1abf96444a1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
