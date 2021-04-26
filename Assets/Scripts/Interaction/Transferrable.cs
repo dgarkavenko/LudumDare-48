@@ -13,6 +13,7 @@ public class Transferrable : InteractableObject
         Floppy = 1,
         Keyboard = 1 << 1,
         Flashlight = 1 << 2,
+        Bottle = 1 << 3
     }
 
     public Vector3 CarryOffset;
