@@ -15,18 +15,18 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.35686275, g: 0.5283463, b: 0.6784314, a: 1}
+  m_FogColor: {r: 0.6784314, g: 0.5381887, b: 0.35686275, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.03
+  m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.06009992, g: 0.06269433, b: 0.066016495, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
-  m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.4756729, g: 0.52488047, b: 0.65199995, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d4454f71d85928744be7771e2143dab7, type: 2}
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.6499168, g: 0.6509804, b: 0.4745098, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e391f00234292cc4f935308c11cf0e54, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 3
-  m_ReflectionIntensity: 0.617
+  m_ReflectionIntensity: 0.201
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12173528, g: 0.1329062, b: 0.1511569, a: 0.617}
+  m_IndirectSpecularColor: {r: 0.18003732, g: 0.15304884, b: 0.12028734, a: 0.201}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -151,14 +151,14 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.5188679, g: 0.5104278, b: 0.43810073, a: 1}
-  m_Intensity: 1.14
+  m_Color: {r: 0.6037736, g: 0.5248808, b: 0.38447848, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343006695}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.6700001, y: 2, z: 9.25}
+  m_LocalPosition: {x: -0.6700001, y: 2, z: 5.309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1914045008}
@@ -819,11 +819,6 @@ GameObject:
 --- !u!1 &1833091947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1042130129260228007, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
-  m_PrefabInstance: {fileID: 1833091880}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1833091948 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3973107660126017756, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
   m_PrefabInstance: {fileID: 1833091880}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1833091949
@@ -1736,20 +1731,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1059980002066054725, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
---- !u!64 &1833092015
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833091948}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1562275218897716241, guid: 155aaa2011cf81045887b9b86c0db502, type: 3}
 --- !u!1 &1914045007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,6 +1868,10 @@ PrefabInstance:
     - target: {fileID: 5812144690134371726, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189515527057253098, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
