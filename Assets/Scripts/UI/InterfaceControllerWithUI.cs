@@ -104,7 +104,7 @@ public class InterfaceControllerWithUI : InterfaceController
         _mainScreen.SetActive(true);
         _isMainScreen = true;
         
-        if (_mouseActive && _currentRoom.NextRoom != null)
+        if (_currentRoom.NextRoom != null)
             _currentRoom.NextRoom.LevelManager.RunGameplay();
     }
 
