@@ -552,6 +552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIFinal
       objectReference: {fileID: 0}
+    - target: {fileID: 2963941560277496553, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3515200320232985398, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -678,6 +682,10 @@ PrefabInstance:
     - target: {fileID: 2963941560277496553, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_Name
       value: UILevel4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963941560277496553, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7447449000263786171, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_Enabled
