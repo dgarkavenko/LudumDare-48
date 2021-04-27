@@ -1770,6 +1770,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1914045008}
     m_Modifications:
+    - target: {fileID: 305184528273588684, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 975833227252740797, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
       propertyPath: m_Name
       value: Detective_room_Props
@@ -1868,7 +1872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189515527057253098, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b0d57b84aeaaf44bd82992873aa6cd, type: 3}
