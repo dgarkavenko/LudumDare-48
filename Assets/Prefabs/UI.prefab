@@ -300,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1362193642001506153, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2067656200873249438, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -382,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1362193642001506153, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2067656200873249438, guid: c8b26fa694e035140beb3c4a62163aa2, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
