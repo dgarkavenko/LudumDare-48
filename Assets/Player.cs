@@ -18,9 +18,12 @@ public class Player : MonoBehaviour, IRoomie
     public OutlineEffect Outliner;
     public AudioListener AudioListener;
 
+    private Rigidbody _rigidbody;
+
     public void OnValidate()
     {
         _fpc = GetComponent<FirstPersonController>();
+        _rigidbody = GetComponent<Rigidbody>();
         Outliner = _fpc.playerCamera.GetComponent<OutlineEffect>();
         AudioListener = _fpc.playerCamera.GetComponent<AudioListener>();
     }
@@ -38,11 +41,14 @@ public class Player : MonoBehaviour, IRoomie
     public void OnEnable()
     {
         _fpc.enabled = true;
+        _rigidbody.isKinematic = false;
     }
 
     public void OnDisable()
     {
         _fpc.enabled = false;
+        _rigidbody.isKinematic = true;
+        _rigidbody.velocity = Vector3.zero;
     }
 
     public Room ParentRoom { get; set; }
